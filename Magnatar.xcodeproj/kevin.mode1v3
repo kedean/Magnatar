@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0AE6F61913A72DD400994400</string>
+										<string>0A0ED42713A828FF004AF540</string>
 										<key>history</key>
 										<array>
 											<string>0A32690E13A3C44B00F2AD4D</string>
@@ -339,13 +339,15 @@
 											<string>0A829E1213A6032E00C38F35</string>
 											<string>0A829EDB13A6852100C38F35</string>
 											<string>0A82A01A13A701BE00C38F35</string>
-											<string>0A82A01B13A701BE00C38F35</string>
 											<string>0A82A02013A701BE00C38F35</string>
 											<string>0A82A02813A701DD00C38F35</string>
-											<string>0ADF796413A70A7100BE7826</string>
-											<string>0AE6F5F913A7277D00994400</string>
-											<string>0AE6F61713A72DD400994400</string>
-											<string>0AE6F61813A72DD400994400</string>
+											<string>0A0ED31713A81AB1004AF540</string>
+											<string>0A0ED34913A81E07004AF540</string>
+											<string>0A0ED3F313A82757004AF540</string>
+											<string>0A0ED41413A8285E004AF540</string>
+											<string>0A0ED41513A8285E004AF540</string>
+											<string>0A0ED41C13A828C7004AF540</string>
+											<string>0A0ED41D13A828C7004AF540</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -357,14 +359,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1000, 526}}</string>
+								<string>{{0, 0}, {1000, 523}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 114 1280 664 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>526pt</string>
+							<string>523pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -377,14 +379,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 531}, {1000, 92}}</string>
+								<string>{{0, 528}, {1000, 95}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 114 1280 664 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>92pt</string>
+							<string>95pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -403,9 +405,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>0AE6F51513A70C7400994400</string>
+				<string>0A0ED30F13A81A61004AF540</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>0AE6F51613A70C7400994400</string>
+				<string>0A0ED31013A81A61004AF540</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -543,12 +545,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>0AE6F52013A70C7400994400</string>
-		<string>0AE6F52113A70C7400994400</string>
+		<string>0A0ED42813A828FF004AF540</string>
+		<string>0A0ED32213A81AB1004AF540</string>
+		<string>0A0ED32313A81AB1004AF540</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0AE78EEE1342EA960063030D</string>
-		<string>/Users/kevin/Downloads/Gradient 2 2/Magnatar.xcodeproj</string>
+		<string>/Users/kevin/Programs/Magnatar/Magnatar.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 114 1280 664 0 0 1280 778 </string>
@@ -572,7 +575,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>Helpers.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -589,6 +592,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -628,7 +633,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>0AE78EEE1342EA960063030D</string>
-				<string>0AE6F51713A70C7400994400</string>
+				<string>0A0ED31113A81A61004AF540</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -641,7 +646,7 @@
 			<key>WindowToolGUID</key>
 			<string>0AE78EEE1342EA960063030D</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -750,13 +755,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>0AE6F51813A70C7400994400</string>
+				<string>0A0ED31A13A81AB1004AF540</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>0AE6F51913A70C7400994400</string>
-				<string>0AE6F51A13A70C7400994400</string>
-				<string>0AE6F51B13A70C7400994400</string>
-				<string>0AE6F51C13A70C7400994400</string>
-				<string>0AE6F51D13A70C7400994400</string>
+				<string>0A0ED31B13A81AB1004AF540</string>
+				<string>0A0ED31C13A81AB1004AF540</string>
+				<string>0A0ED31D13A81AB1004AF540</string>
+				<string>0A0ED31E13A81AB1004AF540</string>
+				<string>0A0ED31F13A81AB1004AF540</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -910,7 +915,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>0AE6F51E13A70C7400994400</string>
+				<string>0A0ED32013A81AB1004AF540</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

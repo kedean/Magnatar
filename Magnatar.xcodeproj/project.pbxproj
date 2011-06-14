@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0ED32613A81B59004AF540 /* Helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A0ED32513A81B59004AF540 /* Helpers.cpp */; };
 		0A3268AA13A1B9EE00F2AD4D /* BezierSpline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */; };
 		0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */; };
 		0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A34FA20139C624900C76FD9 /* OpenGL.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A0ED32413A81B59004AF540 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		0A0ED32513A81B59004AF540 /* Helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Helpers.cpp; sourceTree = "<group>"; };
 		0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierSpline.cpp; sourceTree = "<group>"; };
 		0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
 		0A34F9FC139C60D100C76FD9 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				A01FB6C80F07CFCE000AAC7B /* main.cpp */,
 				0AE78F6E13443F640063030D /* Ship.h */,
 				0AE78F6F13443F640063030D /* Ship.cpp */,
+				0A0ED32413A81B59004AF540 /* Helpers.h */,
+				0A0ED32513A81B59004AF540 /* Helpers.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */,
 				0A3268AA13A1B9EE00F2AD4D /* BezierSpline.cpp in Sources */,
 				0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */,
+				0A0ED32613A81B59004AF540 /* Helpers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,146 +3,9 @@
 
 #include "Ship.h"
 #include "Bezier.h"
+#include "Helpers.h"
 
-double DistanceFromCurve(std::vector<kd::Vector2f>& pixels, sf::Vector2f currentPos){
-	std::vector<kd::Vector2f>::iterator it;
-	double cVal = INT_MAX;
-	for(it = pixels.begin(); it < pixels.end(); it++){ //find least distance to the curve
-		if(it->second > (int)currentPos.y - 100 && it->second < (int)currentPos.y + 100){
-			int dist = abs(currentPos.x - it->first);
-			if(dist < cVal)
-				cVal = dist;
-		}
-	}
-	return cVal;
-}
-int NumDigits(int number){
-	if(number < 0)
-		number = 0-number;
-	int count = 0;
-	while(number > 0){
-		count++;
-		number /= 10;
-	}
-	return count;
-}
-void PointsToPixels(vector<kd::Vector2f>& points, vector<kd::Vector2f>& pixels, sf::RenderWindow& application){
-	float width = application.GetWidth();
-	float halfWidth = width/2;
-	float height = application.GetHeight();
-	float halfHeight = height/2;
-	std::vector<kd::Vector2f>::iterator it;
-	float oldX=-1, oldY=-1;
-	for(it = points.begin(); it < points.end(); it++){
-		float x = (width/20)*(it->first) + halfWidth;
-		float y = halfHeight - ((height/20)*(it->second));
-		
-		if(x != oldX || y != oldY){
-			pixels.push_back(make_pair(x, y));
-			oldX = x;
-			oldY = y;
-		}
-	}
-}
-void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& application, sf::Image* destination){	
-	float width = application.GetWidth();
-	float height = application.GetHeight();
-	
-	destination->Create(width, height, sf::Color(0, 255, 0));
-	destination->SetSmooth(false);
-	
-	int xOld = -1, yOld = -1; //used to avoid duplicate values, as bezier curves can produce when converted to int values
-	
-	vector<kd::Vector2f> points = curve->GetPoints();
-	vector<kd::Vector2f> pixels;
-	PointsToPixels(points, pixels, application);
-	
-	std::vector<kd::Vector2f>::iterator it;
-	for(it = pixels.begin(); it < pixels.end(); it++){
-		
-		int n = it->second + height*level;
-		
-		for(int i = 0; i < it->first; i++){
-			double t = (double)i/it->first;
-			if(t < 0)
-				t = 0;
-			else if(t > 1)
-				t = 1;
-			sf::Color color = sf::Color((255 * t), (100 * (1 - t)), 0);
-			
-			if(i > 0 && i < width && n > 0 && n < height)
-				destination->SetPixel(i, n, color);
-			
-		}
-		for(int i = it->first; i <= width; i++){
-			double t = (double)(i-it->first)/(double)(width-it->first);
-			if(t < 0)
-				t = 0;
-			else if(t > 1)
-				t = 1;
-			sf::Color color = sf::Color((255 * (1-t)), (100 * t), 0);
-			if(i > 0 && i < width && n > 0 && n < height)
-				destination->SetPixel(i, n, color);
-		}
-	}
-}
 
-typedef struct ProgressInfo{ //object to be passed into the gradient creation thread
-	sf::Image* gradientStorage;
-	sf::Sprite* gradientSprites;
-	int index;
-	sf::RenderWindow* application;
-	kd::BezierSpline* spline;
-	int cSize;
-	bool constant;
-	ProgressInfo(int size, sf::RenderWindow* app, sf::Image* storage, sf::Sprite* sprites, kd::BezierSpline* useSpline):
-	cSize(size), index(0), application(app), gradientStorage(storage), gradientSprites(sprites), spline(useSpline), constant(false){}
-} ProgressInfo;
-
-void ProgressGradients(void* UserData){
-	ProgressInfo* info = static_cast<ProgressInfo*>(UserData);
-	
-	int maxIndex;
-	if(info->constant == false){
-		maxIndex = info->index+1;
-	}
-	else{
-		maxIndex = info->cSize;
-	}
-	for(int i = info->index; i < maxIndex; i++){
-		kd::BezierCurve* curve = info->spline->GetCurve(i);
-		curve->Regenerate();
-		ParseToGradient(i, curve, *(info->application), &(info->gradientStorage[i]));
-		info->gradientSprites[i] = sf::Sprite(info->gradientStorage[i]);
-		info->gradientSprites[i].SetPosition(-1, 0 - (info->application->GetHeight()-3.f)*i);
-		++info->index;
-		sf::Sleep(0.01f); //delay helps ensure smooth gameplay outside the thread
-	}
-}
-
-void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::RenderWindow* App){
-	vector<kd::Vector2f> lPoints = curve->GetPoints();
-	vector<kd::Vector2f> lPixels;
-	PointsToPixels(lPoints, lPixels, *App);
-	
-	sf::Vector2f position = player.GetPosition();
-	
-	vector<kd::Vector2f>::iterator it;
-	for(it = lPixels.begin(); it < lPixels.end(); it++){
-		if((int)(it->second) == (int)(position.y)){
-			int xDist = it->first - position.x;
-			if(xDist > 0){
-				player.StopMotion(Ship::West);
-				player.StartMotion(Ship::East, (rand()%25)/10.f * 100);
-			}
-			else{
-				player.StopMotion(Ship::East);
-				player.StartMotion(Ship::West, (rand()%25)/10.f * 100);
-			}
-			return;
-		}
-	}
-}
 
 int main(){
 	sf::RenderWindow App(sf::VideoMode(900, 900*sf::VideoMode::GetDesktopMode().Height/sf::VideoMode::GetDesktopMode().Width), "Magnatar", sf::Style::Close);
@@ -151,6 +14,8 @@ int main(){
 	App.PreserveOpenGLStates(true);
 	
 	sf::View& view = App.GetDefaultView();
+	
+	GameState game(&App);
 	
 	srand(time(NULL));
 	
@@ -186,7 +51,9 @@ int main(){
 			spline.AddPoint(x, y, false);
 		}
 	}
-//	spline.Regenerate();
+	
+	
+	//Load up the players
 	
 	sf::Image playerImages[6];
 	vector<Ship> playerList;
@@ -197,6 +64,9 @@ int main(){
 		playerList.push_back(Ship(&(playerImages[i]), App.GetDefaultView().GetHalfSize() + sf::Vector2f((i-3)*100, 200), sf::Vector2f(1,1), 180.f));
 	}
 	Ship* player = &playerList[0]; //instance that is being controlled
+	
+	
+	//Load up the level
 	
 	int cSize = spline.GetCurves().size();
 	
@@ -227,16 +97,21 @@ int main(){
 	
 	sf::String placingText("1st", sf::Font::GetDefaultFont(), 20);
 	
+	//set up pause screen
+	
+	game.Restart(); //game starts paused
+	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
+	
+	float fadeCountdown = 0;
+	enum FadeState{
+		FADING_IN,
+		FADING_OUT,
+		IDLE
+	} fade = IDLE;
+	
     // Start game loop
     while (App.IsOpened())
     {
-		sf::Vector2f center = App.GetDefaultView().GetCenter();
-		float height = App.GetHeight();
-		
-		int mBound = abs((center.y - height) - height/2) / height;
-		int tBound = mBound+1;
-		int bBound = mBound-1;
-		float elapsed = App.GetFrameTime();
 		
         // Process events
         sf::Event Event;
@@ -247,6 +122,16 @@ int main(){
 			else if(Event.Type == sf::Event::KeyPressed){
 				switch(Event.Key.Code){
 					case 'p':
+						if(game.IsRunning()){
+							if(game.IsPaused()){
+								fade = FADING_OUT;
+							}
+							else{
+								fade = FADING_IN;
+							}
+							fadeCountdown = .2;
+							game.TogglePause();
+						}
 						break;
 					case 'w':
 						break;
@@ -276,41 +161,55 @@ int main(){
 		
 		App.Clear();
 		
+		float height = App.GetHeight();
+		
+		int mBound = abs((view.GetCenter().y - height) - height/2) / height;
+		int tBound = mBound+1;
+		int bBound = mBound-1;
+		float elapsed = App.GetFrameTime();
+		
 		App.Draw(gradientSprites[bBound]);
 		App.Draw(gradientSprites[mBound]);
 		App.Draw(gradientSprites[tBound]);
 		
-		int playerVal;
-		
-		//player update loop
+		static int playerVal = 0;
 		vector<Ship>::iterator playerIt;
 		
-		for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
-			int cIndex = abs(playerIt->GetPosition().y - height) / height;
-			vector<kd::Vector2f> lPoints = spline.GetCurve(cIndex)->GetPoints();
-			vector<kd::Vector2f> lPixels;
-			PointsToPixels(lPoints, lPixels, App);
+		if(game.IsPaused() == false && fade == IDLE){
 			
-			int forwardVal = DistanceFromCurve(lPixels, playerIt->GetPosition() + sf::Vector2f(15, 15)); //distance between the curve and this player, on their y position. Used to determine speed.
-			if(forwardVal == INT_MAX)
-				forwardVal = 50;
-			else
-				forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
-			forwardVal = (forwardVal*forwardVal)/1000; //square and scale down
-			int t = playerIt->GetPosition().y;
-			
-			sf::Vector2f moved = playerIt->Update(forwardVal, elapsed, App, playerList);
-			
-			if(&(*playerIt) == player){ //player char. Move the camera and update his vars
-				view.SetCenter(center + Vector2f(0, moved.y));
-				playerVal = forwardVal;
-			}
-			else {
-				AIUpdatePlayer(*playerIt, spline.GetCurve(cIndex), elapsed, &App);
-			}
+			//player update loop			
+			for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
+				int cIndex = abs(playerIt->GetPosition().y - height) / height;
+				vector<kd::Vector2f> lPoints = spline.GetCurve(cIndex)->GetPoints();
+				vector<kd::Vector2f> lPixels;
+				PointsToPixels(lPoints, lPixels, App);
+				
+				int forwardVal = DistanceFromCurve(lPixels, playerIt->GetPosition() + sf::Vector2f(15, 15)); //distance between the curve and this player, on their y position. Used to determine speed.
+				if(forwardVal == INT_MAX)
+					forwardVal = 50;
+				else
+					forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
+				forwardVal = (forwardVal*forwardVal)/1000; //square and scale down
+				int t = playerIt->GetPosition().y;
+				
+				sf::Vector2f moved = playerIt->Update(forwardVal, elapsed, App, playerList);
+				
+				if(&(*playerIt) == player){ //player char. Move the camera and update his vars
+					view.SetCenter(view.GetCenter().x, player->GetPosition().y - 200);
+					playerVal = forwardVal;
+				}
+				else {
+					AIUpdatePlayer(*playerIt, spline.GetCurve(cIndex), elapsed, &App);
+				}
 
-			
-			App.Draw(*playerIt);
+				
+				App.Draw(*playerIt);
+			}
+		}
+		else{ //draw but don't update anything
+			for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
+				App.Draw(*playerIt);
+			}
 		}
 		
 		/*Display the HUD*/
@@ -355,7 +254,56 @@ int main(){
 		}
 		placingText.SetPosition(view.GetCenter() - view.GetHalfSize() + sf::Vector2f(App.GetWidth() - 50, 5));
 		App.Draw(placingText);
-	
+		
+		if(game.IsPaused() || fade != IDLE){
+			if(fade == FADING_IN){
+				int c = backdrop.GetColor().a;
+				int alpha = backdrop.GetColor().a + 150.f * elapsed/fadeCountdown;
+				
+				backdrop.SetColor(sf::Color(0, 0, 0, alpha));
+				if(alpha >= 150){
+					fadeCountdown = 0;
+					fade = IDLE;
+				}
+			}
+			else if(fade == FADING_OUT){
+				float alpha = backdrop.GetColor().a - 150.f * elapsed/fadeCountdown;
+				backdrop.SetColor(sf::Color(0, 0, 0, alpha));
+				if(alpha <= 10){
+					fadeCountdown = 0;
+					fade = IDLE;
+				}
+			}
+			backdrop.SetPosition(view.GetCenter() - view.GetHalfSize());
+			App.Draw(backdrop);
+		}
+		
+		if(game.IsReady()){
+			static int timer = -1;
+			if(timer < 0)
+				timer = 3;
+			
+			if(timer == 0){
+				timer = -1;
+				fadeCountdown = .2f;
+				fade = FADING_OUT;
+				game.Start();
+			}
+			
+			char timerStr[5];
+			if(timer > 0)
+				sprintf(timerStr, "%d", timer);
+			else
+				sprintf(timerStr, "");
+
+			sf::String timerText(timerStr, sf::Font::GetDefaultFont(), 30);
+			timerText.SetPosition(view.GetCenter() - sf::Vector2f(15, 15));
+			App.Draw(timerText);
+			sf::Sleep(1.f);
+			timer--;
+		}
+		
+		
 	/*
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
