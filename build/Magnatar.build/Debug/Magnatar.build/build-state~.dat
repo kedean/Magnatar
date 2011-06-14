@@ -1,0 +1,683 @@
+TMagnatar
+v7
+r0
+t329682005.893649
+cCheck dependencies
+cProcessInfoPlistFile "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Info.plist" Info.plist
+cCpResource build/Debug/Magnatar.app/Contents/Resources/ship.png ship.png
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o "/Users/kevin/Downloads/Gradient 2 2/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o "/Users/kevin/Downloads/Gradient 2 2/Ship.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o "/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o "/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework /Library/Frameworks/sfml-system.framework
+cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework /Library/Frameworks/sfml-window.framework
+cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework /Library/Frameworks/sfml-graphics.framework
+
+N/Library/Frameworks/SFML.framework/Headers/Config.hpp
+c000000004BBA05180000000000001274
+t1270482200
+s4724
+i<climits>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics.hpp
+c000000004BBA051800000000000006DA
+t1270482200
+s1754
+i<SFML/Window.hpp>
+i<SFML/Graphics/Color.hpp>
+i<SFML/Graphics/Font.hpp>
+i<SFML/Graphics/Glyph.hpp>
+i<SFML/Graphics/Image.hpp>
+i<SFML/Graphics/PostFX.hpp>
+i<SFML/Graphics/RenderWindow.hpp>
+i<SFML/Graphics/Shape.hpp>
+i<SFML/Graphics/Sprite.hpp>
+i<SFML/Graphics/String.hpp>
+i<SFML/Graphics/View.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Color.hpp
+c000000004BBA05180000000000001537
+t1270482200
+s5431
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Drawable.hpp
+c000000004BBA051800000000000035BC
+t1270482200
+s13756
+i<SFML/System/Vector2.hpp>
+i<SFML/Graphics/Color.hpp>
+i<SFML/Graphics/Matrix3.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Font.hpp
+c000000004BBA05180000000000001636
+t1270482200
+s5686
+i<SFML/System/Resource.hpp>
+i<SFML/System/Vector2.hpp>
+i<SFML/System/Unicode.hpp>
+i<SFML/Graphics/Glyph.hpp>
+i<SFML/Graphics/Image.hpp>
+i<SFML/Graphics/Rect.hpp>
+i<map>
+i<string>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Glyph.hpp
+c000000004BBA051800000000000008EB
+t1270482200
+s2283
+i<SFML/Config.hpp>
+i<SFML/Graphics/Rect.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Image.hpp
+c000000004BBA0518000000000000347F
+t1270482200
+s13439
+i<SFML/System/Resource.hpp>
+i<SFML/Graphics/Color.hpp>
+i<SFML/Graphics/Rect.hpp>
+i<string>
+i<vector>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Matrix3.hpp
+c000000004BBA05180000000000001553
+t1270482200
+s5459
+i<SFML/Config.hpp>
+i<SFML/System/Vector2.hpp>
+i<math.h>
+i<SFML/Graphics/Matrix3.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Matrix3.inl
+c000000004BBA05180000000000001F9A
+t1270482200
+s8090
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/PostFX.hpp
+c000000004BBA05180000000000001BF6
+t1270482200
+s7158
+i<SFML/Graphics/Drawable.hpp>
+i<SFML/Graphics/Image.hpp>
+i<istream>
+i<map>
+i<string>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Rect.hpp
+c000000004BBA05180000000000001241
+t1270482200
+s4673
+i<algorithm>
+i<SFML/Graphics/Rect.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Rect.inl
+c000000004BBA05180000000000000F07
+t1270482200
+s3847
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/RenderTarget.hpp
+c000000004BBA0518000000000000184F
+t1270482200
+s6223
+i<SFML/Graphics/Color.hpp>
+i<SFML/Graphics/View.hpp>
+i<SFML/Graphics/Rect.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/RenderWindow.hpp
+c000000004BBA051800000000000014AD
+t1270482200
+s5293
+i<SFML/Graphics/Image.hpp>
+i<SFML/Graphics/RenderTarget.hpp>
+i<SFML/Window/Window.hpp>
+i<string>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Shape.hpp
+c000000004BBA051800000000000034E6
+t1270482200
+s13542
+i<SFML/Graphics/Drawable.hpp>
+i<SFML/System/Vector2.hpp>
+i<vector>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/Sprite.hpp
+c000000004BBA05180000000000001A4A
+t1270482200
+s6730
+i<SFML/System/Resource.hpp>
+i<SFML/Graphics/Drawable.hpp>
+i<SFML/Graphics/Rect.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/String.hpp
+c000000004BBA05180000000000001C60
+t1270482200
+s7264
+i<SFML/System/Resource.hpp>
+i<SFML/System/Unicode.hpp>
+i<SFML/Graphics/Drawable.hpp>
+i<SFML/Graphics/Font.hpp>
+i<SFML/Graphics/Rect.hpp>
+i<string>
+
+N/Library/Frameworks/SFML.framework/Headers/Graphics/View.hpp
+c000000004BBA05180000000000001BDB
+t1270482200
+s7131
+i<SFML/Config.hpp>
+i<SFML/Graphics/Rect.hpp>
+i<SFML/Graphics/Matrix3.hpp>
+i<SFML/System/Vector2.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System.hpp
+c000000004BBA0518000000000000069F
+t1270482200
+s1695
+i<SFML/Config.hpp>
+i<SFML/System/Clock.hpp>
+i<SFML/System/Lock.hpp>
+i<SFML/System/Mutex.hpp>
+i<SFML/System/Randomizer.hpp>
+i<SFML/System/Sleep.hpp>
+i<SFML/System/Thread.hpp>
+i<SFML/System/Unicode.hpp>
+i<SFML/System/Vector2.hpp>
+i<SFML/System/Vector3.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Clock.hpp
+c000000004BBA051800000000000009C4
+t1270482200
+s2500
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Lock.hpp
+c000000004BBA05180000000000000958
+t1270482200
+s2392
+i<SFML/System/NonCopyable.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Mutex.hpp
+c000000004BBA051800000000000005ED
+t1270482200
+s1517
+i<SFML/Config.hpp>
+i<SFML/System/Win32/Mutex.hpp>
+i<SFML/System/Unix/Mutex.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/NonCopyable.hpp
+c000000004BBA05180000000000000A09
+t1270482200
+s2569
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Randomizer.hpp
+c000000004BBA05180000000000000D0C
+t1270482200
+s3340
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Resource.hpp
+c000000004BBA05180000000000001D40
+t1270482200
+s7488
+i<set>
+i<SFML/System/Resource.inl>
+i<SFML/System/ResourcePtr.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Resource.inl
+c000000004BBA05180000000000000B74
+t1270482200
+s2932
+
+N/Library/Frameworks/SFML.framework/Headers/System/ResourcePtr.inl
+c000000004BBA05180000000000001193
+t1270482200
+s4499
+
+N/Library/Frameworks/SFML.framework/Headers/System/Sleep.hpp
+c000000004BBA051800000000000006C5
+t1270482200
+s1733
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Thread.hpp
+c000000004BBA051800000000000005F2
+t1270482200
+s1522
+i<SFML/Config.hpp>
+i<SFML/System/Win32/Thread.hpp>
+i<SFML/System/Unix/Thread.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Unicode.hpp
+c000000004BBA05180000000000003745
+t1270482200
+s14149
+i<SFML/Config.hpp>
+i<iterator>
+i<locale>
+i<string>
+i<stdlib.h>
+i<SFML/System/Unicode.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Unicode.inl
+c000000004BBA05180000000000003F66
+t1270482200
+s16230
+
+N/Library/Frameworks/SFML.framework/Headers/System/Unix/Mutex.hpp
+c000000004BBA05180000000000000B01
+t1270482200
+s2817
+i<SFML/System/NonCopyable.hpp>
+i<pthread.h>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Unix/Thread.hpp
+c000000004BBA05180000000000001153
+t1270482200
+s4435
+i<SFML/System/NonCopyable.hpp>
+i<pthread.h>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Vector2.hpp
+c000000004BBA05180000000000001A8A
+t1270482200
+s6794
+i<SFML/System/Vector2.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Vector2.inl
+c000000004BBA0518000000000000155E
+t1270482200
+s5470
+
+N/Library/Frameworks/SFML.framework/Headers/System/Vector3.hpp
+c000000004BBA05180000000000001ADA
+t1270482200
+s6874
+i<SFML/System/Vector3.inl>
+
+N/Library/Frameworks/SFML.framework/Headers/System/Vector3.inl
+c000000004BBA05180000000000001614
+t1270482200
+s5652
+
+N/Library/Frameworks/SFML.framework/Headers/Window.hpp
+c000000004BBA0518000000000000069A
+t1270482200
+s1690
+i<SFML/System.hpp>
+i<SFML/Window/Context.hpp>
+i<SFML/Window/Event.hpp>
+i<SFML/Window/Input.hpp>
+i<SFML/Window/VideoMode.hpp>
+i<SFML/Window/Window.hpp>
+i<SFML/Window/WindowListener.hpp>
+i<SFML/Window/WindowStyle.hpp>
+i<SFML/Window/OpenGL.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/Context.hpp
+c000000004BBA05180000000000000D8E
+t1270482200
+s3470
+i<SFML/Config.hpp>
+i<SFML/System/NonCopyable.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/Event.hpp
+c000000004BBA05180000000000001F88
+t1270482200
+s8072
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/Input.hpp
+c000000004BBA0518000000000000156B
+t1270482200
+s5483
+i<SFML/Config.hpp>
+i<SFML/System/NonCopyable.hpp>
+i<SFML/Window/Event.hpp>
+i<SFML/Window/WindowListener.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/OpenGL.hpp
+c000000004BBA051800000000000007AC
+t1270482200
+s1964
+i<SFML/Config.hpp>
+i<windows.h>
+i<GL/gl.h>
+i<GL/glu.h>
+i<GL/gl.h>
+i<GL/glu.h>
+i<OpenGL/gl.h>
+i<OpenGL/glu.h>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/VideoMode.hpp
+c000000004BBA051800000000000013FE
+t1270482200
+s5118
+i<SFML/Config.hpp>
+i<cstdlib>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/Window.hpp
+c000000004BBA05180000000000003384
+t1270482200
+s13188
+i<SFML/Window/Event.hpp>
+i<SFML/Window/Input.hpp>
+i<SFML/Window/VideoMode.hpp>
+i<SFML/Window/WindowHandle.hpp>
+i<SFML/Window/WindowListener.hpp>
+i<SFML/Window/WindowSettings.hpp>
+i<SFML/Window/WindowStyle.hpp>
+i<SFML/System/Clock.hpp>
+i<SFML/System/NonCopyable.hpp>
+i<queue>
+i<string>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/WindowHandle.hpp
+c000000004BBA051800000000000007CB
+t1270482200
+s1995
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/WindowListener.hpp
+c000000004BBA051800000000000008DD
+t1270482200
+s2269
+i<SFML/Config.hpp>
+
+N/Library/Frameworks/SFML.framework/Headers/Window/WindowSettings.hpp
+c000000004BBA0518000000000000098E
+t1270482200
+s2446
+
+N/Library/Frameworks/SFML.framework/Headers/Window/WindowStyle.hpp
+c000000004BBA05180000000000000768
+t1270482200
+s1896
+
+N/Library/Frameworks/sfml-graphics.framework
+c000000004BBA051700000000000000AA
+t1270482199
+s170
+
+N/Library/Frameworks/sfml-graphics.framework/sfml-graphics
+c000000004BBA051800000000004FCC40
+t1270482200
+s5229632
+
+N/Library/Frameworks/sfml-system.framework
+c000000004BBA051800000000000000AA
+t1270482200
+s170
+
+N/Library/Frameworks/sfml-system.framework/sfml-system
+c000000004BBA051800000000001C45D8
+t1270482200
+s1852888
+
+N/Library/Frameworks/sfml-window.framework
+c000000004BBA051800000000000000AA
+t1270482200
+s170
+
+N/Library/Frameworks/sfml-window.framework/sfml-window
+c000000004BBA051800000000001FC530
+t1270482200
+s2082096
+
+N/System/Library/Frameworks/OpenGL.framework/Headers/OpenGL.h
+c000000004BD2501F0000000000001659
+t1272074271
+s5721
+
+N/System/Library/Frameworks/OpenGL.framework/Headers/gl.h
+c000000004BD2501F0000000000025B59
+t1272074271
+s154457
+
+N/System/Library/Frameworks/OpenGL.framework/Headers/glu.h
+c000000004BD2501F0000000000003F84
+t1272074271
+s16260
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c000000004D7713DA0000000000043330
+t1299649498
+s275248
+
+N/Users/kevin/Downloads/Gradient 2 2/Bezier.h
+c000000004DF6383C0000000000002154
+t1307981884
+s8532
+i<vector>
+i<OpenGL/OpenGL.h>
+i<OpenGL/glu.h>
+i<GL/GL.h>
+i<GL/glu.h>
+i<cmath>
+
+N/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp
+c000000004DF6384C00000000000027E4
+t1307981900
+s10212
+i"Bezier.h"
+i<iostream>
+
+N/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp
+c000000004DF64C680000000000001349
+t1307987048
+s4937
+i"Bezier.h"
+
+N/Users/kevin/Downloads/Gradient 2 2/Ship.cpp
+c000000004DF129180000000000000F55
+t1307650328
+s3925
+i"Ship.h"
+
+N/Users/kevin/Downloads/Gradient 2 2/Ship.h
+c000000004DF129260000000000000371
+t1307650342
+s881
+i<SFML/Graphics.hpp>
+i<iostream>
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app
+t2
+s0
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework
+t1307989205
+s170
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework
+t1307989205
+s170
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework
+t1307989205
+s170
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Info.plist
+t1307989204
+s606
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/MacOS/Magnatar
+t2
+s0
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/PkgInfo
+t1307989204
+s8
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Resources/ship.png
+t1307989204
+s814
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o
+t1307989205
+s133308
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o
+t1307989205
+s155960
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList
+c000000004DF654D400000000000001B3
+t1307989204
+s435
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
+t1307989205
+s146808
+
+N/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/kevin/Downloads/Gradient 2 2/main.cpp
+c000000004DF654D30000000000002794
+t1307989203
+s10132
+i<SFML/Graphics.hpp>
+i<SFML/Window.hpp>
+i<iostream>
+i<cmath>
+i<cstdlib>
+i<limits>
+i"Ship.h"
+i"Bezier.h"
+
+N/Users/kevin/Downloads/Gradient 2 2/ship.png
+c000000004DF3D2C4000000000000032E
+t1307824836
+s814
+
+N/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/usr/include/pthread.h
+c000000004BBD2CE900000000000038F0
+t1270689001
+s14576
+
+N/usr/include/stdlib.h
+c000000004BBD2CE90000000000002DF5
+t1270689001
+s11765
+
+NInfo.plist
+c000000004D92B314000000000000027A
+t1301459732
+s634
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies329682004#329682004#0(0"0(0#1#0"8616243744#0"0#
+
+CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o "/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s329682005.021381
+e329682005.650743
+r1
+xCompileC
+xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o
+x/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp329682005#329682005#0(0"0(0#0#51"/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp8618499872#1222"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o"0#
+
+CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o "/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s329682005.047901
+e329682005.473998
+r1
+xCompileC
+xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o
+x/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp329682005#329682005#0(0"0(0#0#52"/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp8616866304#1224"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o"0#
+
+CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o "/Users/kevin/Downloads/Gradient 2 2/Ship.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s329682004.334765
+e329682005.047800
+r1
+xCompileC
+xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
+x/Users/kevin/Downloads/Gradient 2 2/Ship.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/kevin/Downloads/Gradient 2 2/Ship.cpp329682004#329682005#0(0"0(0#0#44"/Users/kevin/Downloads/Gradient 2 2/Ship.cpp8619006656#1208"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/Ship.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o"0#
+
+CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o "/Users/kevin/Downloads/Gradient 2 2/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s329682004.333706
+e329682005.021286
+r0
+xCompileC
+xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
+x/Users/kevin/Downloads/Gradient 2 2/main.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/kevin/Downloads/Gradient 2 2/main.cpp: In function 'int main()':
+o/Users/kevin/Downloads/Gradient 2 2/main.cpp:131: error: 'class sf::RenderWindow' has no member named 'Full'
+o/Users/kevin/Downloads/Gradient 2 2/main.cpp:132: error: expected `;' before 'App'
+lSLF07#2@52"Compile /Users/kevin/Downloads/Gradient 2 2/main.cpp329682004#329682005#0(264"/Users/kevin/Downloads/Gradient 2 2/main.cpp: In function 'int main()':/Users/kevin/Downloads/Gradient 2 2/main.cpp:131: error: 'class sf::RenderWindow' has no member named 'Full'/Users/kevin/Downloads/Gradient 2 2/main.cpp:132: error: expected `;' before 'App'2(4@51"'class sf::RenderWindow' has no member named 'Full'329682004#72#109#0(6@44"/Users/kevin/Downloads/Gradient 2 2/main.cpp329682003#131#0#131#0#27"'*' has no member named '*'0(4@25"Expected `;' before 'App'329682004#181#83#0(6@44"/Users/kevin/Downloads/Gradient 2 2/main.cpp329682003#132#0#132#0#19"expected * before *0(0#0#44"/Users/kevin/Downloads/Gradient 2 2/main.cpp8618782496#1208"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/main.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o"1#
+
+CCpResource build/Debug/Magnatar.app/Contents/Resources/ship.png ship.png
+s329682004.321917
+e329682004.333599
+r1
+xCpResource
+xbuild/Debug/Magnatar.app/Contents/Resources/ship.png
+xship.png
+lSLF07#2@13"Copy ship.png329682004#329682004#0(0"0(0#0#44"/Users/kevin/Downloads/Gradient 2 2/ship.png8616210368#336"    cd "/Users/kevin/Downloads/Gradient 2 2"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/kevin/Downloads/Gradient 2 2/ship.png" "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Resources"0#
+
+CLd "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/MacOS/Magnatar" normal i386
+r0
+
+CPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework /Library/Frameworks/sfml-graphics.framework
+s329682005.652160
+e329682005.893372
+r1
+xPBXCp
+xbuild/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework
+x/Library/Frameworks/sfml-graphics.framework
+lSLF07#2@48"Copy /Library/Frameworks/sfml-graphics.framework329682005#329682005#0(0"0(0#0#43"/Library/Frameworks/sfml-graphics.framework8618686816#334"    cd "/Users/kevin/Downloads/Gradient 2 2"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Library/Frameworks/sfml-graphics.framework "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks"0#
+
+CPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework /Library/Frameworks/sfml-system.framework
+s329682005.650841
+e329682005.793796
+r1
+xPBXCp
+xbuild/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework
+x/Library/Frameworks/sfml-system.framework
+lSLF07#2@46"Copy /Library/Frameworks/sfml-system.framework329682005#329682005#0(0"0(0#0#41"/Library/Frameworks/sfml-system.framework8616530176#332"    cd "/Users/kevin/Downloads/Gradient 2 2"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Library/Frameworks/sfml-system.framework "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks"0#
+
+CPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework /Library/Frameworks/sfml-window.framework
+s329682005.651602
+e329682005.800725
+r1
+xPBXCp
+xbuild/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework
+x/Library/Frameworks/sfml-window.framework
+lSLF07#2@46"Copy /Library/Frameworks/sfml-window.framework329682005#329682005#0(0"0(0#0#41"/Library/Frameworks/sfml-window.framework8619142336#332"    cd "/Users/kevin/Downloads/Gradient 2 2"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Library/Frameworks/sfml-window.framework "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Frameworks"0#
+
+CProcessInfoPlistFile "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Info.plist" Info.plist
+s329682004.316538
+e329682004.321834
+r1
+xProcessInfoPlistFile
+x/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist329682004#329682004#0(0"0(0#0#46"/Users/kevin/Downloads/Gradient 2 2/Info.plist8618663232#301"    cd "/Users/kevin/Downloads/Gradient 2 2"    builtin-infoPlistUtility Info.plist -genpkginfo "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/PkgInfo" -expandbuildsettings -platform macosx -o "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/Info.plist"0#
+
+CTouch "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app"
+r0
+
