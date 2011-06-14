@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A3268AA13A1B9EE00F2AD4D /* BezierSpline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */; };
+		0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */; };
+		0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A34FA20139C624900C76FD9 /* OpenGL.framework */; };
+		0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A829FEF13A6E90D00C38F35 /* Collision.cpp */; };
+		0AE6F56B13A7162E00994400 /* ship0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56513A7162E00994400 /* ship0.png */; };
+		0AE6F56C13A7162E00994400 /* ship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56613A7162E00994400 /* ship1.png */; };
+		0AE6F56D13A7162E00994400 /* ship2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56713A7162E00994400 /* ship2.png */; };
+		0AE6F56E13A7162E00994400 /* ship3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56813A7162E00994400 /* ship3.png */; };
+		0AE6F56F13A7162E00994400 /* ship4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56913A7162E00994400 /* ship4.png */; };
+		0AE6F57013A7162E00994400 /* ship5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56A13A7162E00994400 /* ship5.png */; };
+		0AE78F7013443F640063030D /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AE78F6F13443F640063030D /* Ship.cpp */; };
+		A0072ADE0F1D0EC500B4A594 /* sfml-system.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CB0F07CFF2000AAC7B /* sfml-system.framework */; };
+		A0072ADF0F1D0EC500B4A594 /* sfml-window.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CC0F07CFF2000AAC7B /* sfml-window.framework */; };
+		A0072AE00F1D0EC500B4A594 /* sfml-graphics.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CA0F07CFF2000AAC7B /* sfml-graphics.framework */; };
+		A01FB6C90F07CFCE000AAC7B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A01FB6C80F07CFCE000AAC7B /* main.cpp */; };
+		A01FB6CE0F07CFF2000AAC7B /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CA0F07CFF2000AAC7B /* sfml-graphics.framework */; };
+		A01FB6CF0F07CFF2000AAC7B /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CB0F07CFF2000AAC7B /* sfml-system.framework */; };
+		A01FB6D00F07CFF2000AAC7B /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01FB6CC0F07CFF2000AAC7B /* sfml-window.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0072AF00F1D0EDD00B4A594 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0072ADE0F1D0EC500B4A594 /* sfml-system.framework in Copy Frameworks */,
+				A0072ADF0F1D0EC500B4A594 /* sfml-window.framework in Copy Frameworks */,
+				A0072AE00F1D0EC500B4A594 /* sfml-graphics.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierSpline.cpp; sourceTree = "<group>"; };
+		0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
+		0A34F9FC139C60D100C76FD9 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
+		0A34FA20139C624900C76FD9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0A829FEF13A6E90D00C38F35 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
+		0A829FF013A6E90D00C38F35 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
+		0AE6F56513A7162E00994400 /* ship0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship0.png; path = ships/ship0.png; sourceTree = "<group>"; };
+		0AE6F56613A7162E00994400 /* ship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship1.png; path = ships/ship1.png; sourceTree = "<group>"; };
+		0AE6F56713A7162E00994400 /* ship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship2.png; path = ships/ship2.png; sourceTree = "<group>"; };
+		0AE6F56813A7162E00994400 /* ship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship3.png; path = ships/ship3.png; sourceTree = "<group>"; };
+		0AE6F56913A7162E00994400 /* ship4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship4.png; path = ships/ship4.png; sourceTree = "<group>"; };
+		0AE6F56A13A7162E00994400 /* ship5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship5.png; path = ships/ship5.png; sourceTree = "<group>"; };
+		0AE78F6E13443F640063030D /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		0AE78F6F13443F640063030D /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
+		A01FB6A90F07CF6E000AAC7B /* Magnatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magnatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01FB6AC0F07CF6E000AAC7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A01FB6C80F07CFCE000AAC7B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A01FB6CA0F07CFF2000AAC7B /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "/Library/Frameworks/sfml-graphics.framework"; sourceTree = "<absolute>"; };
+		A01FB6CB0F07CFF2000AAC7B /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "/Library/Frameworks/sfml-system.framework"; sourceTree = "<absolute>"; };
+		A01FB6CC0F07CFF2000AAC7B /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "/Library/Frameworks/sfml-window.framework"; sourceTree = "<absolute>"; };
+		A01FB6CD0F07CFF2000AAC7B /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = /Library/Frameworks/SFML.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A01FB6A70F07CF6E000AAC7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01FB6CE0F07CFF2000AAC7B /* sfml-graphics.framework in Frameworks */,
+				A01FB6CF0F07CFF2000AAC7B /* sfml-system.framework in Frameworks */,
+				A01FB6D00F07CFF2000AAC7B /* sfml-window.framework in Frameworks */,
+				0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A7C526C13A70C4100B4BE03 /* Ships */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F56513A7162E00994400 /* ship0.png */,
+				0AE6F56613A7162E00994400 /* ship1.png */,
+				0AE6F56713A7162E00994400 /* ship2.png */,
+				0AE6F56813A7162E00994400 /* ship3.png */,
+				0AE6F56913A7162E00994400 /* ship4.png */,
+				0AE6F56A13A7162E00994400 /* ship5.png */,
+			);
+			name = Ships;
+			sourceTree = "<group>";
+		};
+		A01FB69A0F07CF63000AAC7B = {
+			isa = PBXGroup;
+			children = (
+				A01FB6B20F07CF80000AAC7B /* Sources */,
+				A01FB6B10F07CF7C000AAC7B /* Resources */,
+				A01FB6B00F07CF75000AAC7B /* Frameworks */,
+				A01FB6AA0F07CF6E000AAC7B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A01FB6AA0F07CF6E000AAC7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A01FB6A90F07CF6E000AAC7B /* Magnatar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A01FB6B00F07CF75000AAC7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A01FB6CD0F07CFF2000AAC7B /* SFML.framework */,
+				A01FB6CB0F07CFF2000AAC7B /* sfml-system.framework */,
+				A01FB6CC0F07CFF2000AAC7B /* sfml-window.framework */,
+				A01FB6CA0F07CFF2000AAC7B /* sfml-graphics.framework */,
+				0A34FA20139C624900C76FD9 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A01FB6B10F07CF7C000AAC7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A7C526C13A70C4100B4BE03 /* Ships */,
+				A01FB6AC0F07CF6E000AAC7B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A01FB6B20F07CF80000AAC7B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0A829FEF13A6E90D00C38F35 /* Collision.cpp */,
+				0A829FF013A6E90D00C38F35 /* Collision.h */,
+				0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */,
+				0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */,
+				0A34F9FC139C60D100C76FD9 /* Bezier.h */,
+				A01FB6C80F07CFCE000AAC7B /* main.cpp */,
+				0AE78F6E13443F640063030D /* Ship.h */,
+				0AE78F6F13443F640063030D /* Ship.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A01FB6A80F07CF6E000AAC7B /* Magnatar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A01FB6AF0F07CF6F000AAC7B /* Build configuration list for PBXNativeTarget "Magnatar" */;
+			buildPhases = (
+				A01FB6A50F07CF6E000AAC7B /* Resources */,
+				A01FB6A60F07CF6E000AAC7B /* Sources */,
+				A01FB6A70F07CF6E000AAC7B /* Frameworks */,
+				A0072AF00F1D0EDD00B4A594 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Magnatar;
+			productName = Gradient;
+			productReference = A01FB6A90F07CF6E000AAC7B /* Magnatar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A01FB69C0F07CF63000AAC7B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = A01FB69F0F07CF63000AAC7B /* Build configuration list for PBXProject "Magnatar" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = A01FB69A0F07CF63000AAC7B;
+			productRefGroup = A01FB6AA0F07CF6E000AAC7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A01FB6A80F07CF6E000AAC7B /* Magnatar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A01FB6A50F07CF6E000AAC7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE6F56B13A7162E00994400 /* ship0.png in Resources */,
+				0AE6F56C13A7162E00994400 /* ship1.png in Resources */,
+				0AE6F56D13A7162E00994400 /* ship2.png in Resources */,
+				0AE6F56E13A7162E00994400 /* ship3.png in Resources */,
+				0AE6F56F13A7162E00994400 /* ship4.png in Resources */,
+				0AE6F57013A7162E00994400 /* ship5.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A01FB6A60F07CF6E000AAC7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01FB6C90F07CFCE000AAC7B /* main.cpp in Sources */,
+				0AE78F7013443F640063030D /* Ship.cpp in Sources */,
+				0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */,
+				0A3268AA13A1B9EE00F2AD4D /* BezierSpline.cpp in Sources */,
+				0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A01FB69D0F07CF63000AAC7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = /usr/include;
+			};
+			name = Debug;
+		};
+		A01FB69E0F07CF63000AAC7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		A01FB6AD0F07CF6F000AAC7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PREBINDING = NO;
+				PRODUCT_NAME = Magnatar;
+			};
+			name = Debug;
+		};
+		A01FB6AE0F07CF6F000AAC7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PREBINDING = NO;
+				PRODUCT_NAME = Magnatar;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A01FB69F0F07CF63000AAC7B /* Build configuration list for PBXProject "Magnatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01FB69D0F07CF63000AAC7B /* Debug */,
+				A01FB69E0F07CF63000AAC7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A01FB6AF0F07CF6F000AAC7B /* Build configuration list for PBXNativeTarget "Magnatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01FB6AD0F07CF6F000AAC7B /* Debug */,
+				A01FB6AE0F07CF6F000AAC7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A01FB69C0F07CF63000AAC7B /* Project object */;
+}
