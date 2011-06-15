@@ -34,18 +34,18 @@ int main(){
 		
 		int r = (rand() % 6 - 3);
 		
-		int x = prevP.first + r;
+		int x = prevP.x + r;
 		if(x < -7 || x > 7) //if the new x is outside the threshold, reverse the alteration
-			x = prevP.first - r;
+			x = prevP.x - r;
 		
 		int y = n*5 - 10;
-		if(n+1 == gSize){ //last point on the curve should be centered, as should first one
+		if(n+1 == gSize){ //last point on the curve should be centered, as should x one
 			spline.AddPoint(0, y, false);
 		}
 		else if(n+2 < gSize && n % 4 == 0){ //new curve
 			spline.AddPoint(x, y, false).AddCutoff().AddPoint(x, y, false);
 			n++;
-			spline.AddPoint(x + (x-prevP.first), n*5 - 10, false);
+			spline.AddPoint(x + (x-prevP.x), n*5 - 10, false);
 		}
 		else{
 			spline.AddPoint(x, y, false);
@@ -76,8 +76,6 @@ int main(){
 	ProgressInfo gradientInfo(cSize, &App, gradientStorage, gradientSprites, &spline);
 	
 	ProgressGradients((void*)&gradientInfo); //preload the first few frames to prevent scratch at the start
-	ProgressGradients((void*)&gradientInfo);
-	ProgressGradients((void*)&gradientInfo);
 	
 	gradientInfo.constant = true;
 	
@@ -87,12 +85,11 @@ int main(){
 	/*HUD setup*/
 	
 	int width = App.GetWidth();
-	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, (width*width)/1000 + 2, 20, sf::Color(255, 255, 255, 200));
+	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
 	sf::Shape powerBar;
 	powerBar.AddPoint(0, 0, sf::Color(255, 255, 0, 200));
-	
-	powerBar.AddPoint((width*width)/1000, 0, sf::Color(255, 0, 0, 200));
-	powerBar.AddPoint((width*width)/1000, 18, sf::Color(255, 0, 0, 200));
+	powerBar.AddPoint(400, 0, sf::Color(255, 0, 0, 200));
+	powerBar.AddPoint(400, 18, sf::Color(255, 0, 0, 200));
 	powerBar.AddPoint(0, 18, sf::Color(255, 255, 0, 200));
 	
 	sf::String placingText("1st", sf::Font::GetDefaultFont(), 20);
@@ -164,18 +161,16 @@ int main(){
 		float height = App.GetHeight();
 		
 		int mBound = abs((view.GetCenter().y - height) - height/2) / height;
-		int tBound = mBound+1;
-		int bBound = mBound-1;
 		float elapsed = App.GetFrameTime();
 		
-		App.Draw(gradientSprites[bBound]);
+		App.Draw(gradientSprites[mBound - 1]);
 		App.Draw(gradientSprites[mBound]);
-		App.Draw(gradientSprites[tBound]);
+		App.Draw(gradientSprites[mBound + 1]);
 		
 		static int playerVal = 0;
 		vector<Ship>::iterator playerIt;
 		
-		if(game.IsPaused() == false && fade == IDLE){
+		if(game.IsPaused() == false && fade == IDLE){ //paused games should not update the players
 			
 			//player update loop			
 			for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
@@ -185,7 +180,7 @@ int main(){
 				PointsToPixels(lPoints, lPixels, App);
 				
 				int forwardVal = DistanceFromCurve(lPixels, playerIt->GetPosition() + sf::Vector2f(15, 15)); //distance between the curve and this player, on their y position. Used to determine speed.
-				if(forwardVal == INT_MAX)
+				if(forwardVal > width) //infinitely far from curve, thats not allowed. No motion in that case.
 					forwardVal = 50;
 				else
 					forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
@@ -215,6 +210,7 @@ int main(){
 		/*Display the HUD*/
 		
 		if(playerVal != 1){
+			playerVal *= (400.f/((width*width)/1000));
 			powerBar.SetPointPosition(0, 0, 0);
 			powerBar.SetPointPosition(1, playerVal, 0);
 			powerBar.SetPointPosition(2, playerVal, 18);
@@ -255,7 +251,7 @@ int main(){
 		placingText.SetPosition(view.GetCenter() - view.GetHalfSize() + sf::Vector2f(App.GetWidth() - 50, 5));
 		App.Draw(placingText);
 		
-		if(game.IsPaused() || fade != IDLE){
+		if(game.IsPaused() || fade != IDLE){ //display and fading of pause screen
 			if(fade == FADING_IN){
 				int c = backdrop.GetColor().a;
 				int alpha = backdrop.GetColor().a + 150.f * elapsed/fadeCountdown;
@@ -278,7 +274,7 @@ int main(){
 			App.Draw(backdrop);
 		}
 		
-		if(game.IsReady()){
+		if(game.IsReady()){ //Countdown screen, only appear at start of game
 			static int timer = -1;
 			if(timer < 0)
 				timer = 3;

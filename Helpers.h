@@ -31,6 +31,12 @@ typedef struct ProgressInfo{ //object to be passed into the gradient creation th
 	}
 } ProgressInfo;
 
+double DistanceFromCurve(std::vector<kd::Vector2f>& pixels, sf::Vector2f currentPos);
+void PointsToPixels(vector<kd::Vector2f>& points, vector<kd::Vector2f>& pixels, sf::RenderWindow& application);
+void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& application, sf::Image* destination);
+void ProgressGradients(void* UserData);
+void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::RenderWindow* App);
+
 class GameState{ //contains the global state of the game in progress
 private:
 	bool _paused;
@@ -72,9 +78,3 @@ public:
 		return *this;
 	}
 };
-
-double DistanceFromCurve(std::vector<kd::Vector2f>& pixels, sf::Vector2f currentPos);
-void PointsToPixels(vector<kd::Vector2f>& points, vector<kd::Vector2f>& pixels, sf::RenderWindow& application);
-void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& application, sf::Image* destination);
-void ProgressGradients(void* UserData);
-void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::RenderWindow* App);

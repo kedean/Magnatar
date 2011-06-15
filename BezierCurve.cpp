@@ -21,10 +21,10 @@ Vector2f BezierCurve::Interpolate(double i){
 		iN *= i;
 		jN /= j;
 		
-		x += _controls[k].first * multiplier;
-		y += _controls[k].second * multiplier;
+		x += _controls[k].x * multiplier;
+		y += _controls[k].y * multiplier;
 	}
-	return make_pair(x, y);
+	return Vector2f(x, y);
 }
 
 Vector2f BezierCurve::Derive(double i){
@@ -34,7 +34,7 @@ Vector2f BezierCurve::Derive(double i){
 	vector<Vector2f> q_controls;
 	
 	for(int k = 0; k < n; k++){
-		q_controls.push_back(make_pair(n*(_controls[k+1].first - _controls[k].first), n*(_controls[k+1].second - _controls[k].second)));
+		q_controls.push_back(Vector2f(n*(_controls[k+1].x - _controls[k].x), n*(_controls[k+1].y - _controls[k].y)));
 	}
 	
 	n--;
@@ -52,10 +52,10 @@ Vector2f BezierCurve::Derive(double i){
 		iN *= i;
 		jN /= j;
 		
-		x += q_controls[k].first * multiplier;
-		y += q_controls[k].second * multiplier;
+		x += q_controls[k].x * multiplier;
+		y += q_controls[k].y * multiplier;
 	}
-	return make_pair(x, y);
+	return Vector2f(x, y);
 }
 
 Vector2f BezierCurve::CalcLineLayer(double t, bool draw){
@@ -65,23 +65,23 @@ Vector2f BezierCurve::CalcLineLayer(double t, bool draw){
 	if(maxControl == 0) //only one control, so there are no control sets
 		return _controls[0];
 	else if(maxControl == -1) //no controls
-		return make_pair(0, 0);
+		return Vector2f(0, 0);
 	
-	Vector2f subControls[maxControl+1]; //array of control subsets. Will get smaller as the loop iterates, but its size is always the first sub group
+	Vector2f subControls[maxControl+1]; //array of control subsets. Will get smaller as the loop iterates, but its size is always the x sub group
 	for(int i = 0; i <= maxControl; i++){ //copy all controls over as the initial set. must be copy by value, not reference, since subControls is significantly altered by execution
 		subControls[i] = _controls[i];
 	}
 	
 	for(; maxControl > 0; maxControl--){
 		for(int i = 0; i < maxControl; i++){
-			subControls[i].first += (subControls[i+1].first - subControls[i].first)*t;
-			subControls[i].second += (subControls[i+1].second - subControls[i].second)*t;
+			subControls[i].x += (subControls[i+1].x - subControls[i].x)*t;
+			subControls[i].y += (subControls[i+1].y - subControls[i].y)*t;
 			
 			if(draw && i != 0){ //if the draw parameter was enabled, draw the line segments which are used to calculate the resultant point
 				glBegin(GL_LINES);
 				glColor4f(_animatedLineColor.r, _animatedLineColor.g, _animatedLineColor.b, _animatedLineColor.a);
-				glVertex2f(subControls[i-1].first, subControls[i-1].second);
-				glVertex2f(subControls[i].first, subControls[i].second);
+				glVertex2f(subControls[i-1].x, subControls[i-1].y);
+				glVertex2f(subControls[i].x, subControls[i].y);
 				glEnd();
 			}
 		}
@@ -122,31 +122,31 @@ BezierCurve& BezierCurve::AddPoint(Vector2f p,  bool regen){
 	return *this;
 }
 BezierCurve& BezierCurve::AddPoint(int x, int y, bool regen){
-	_controls.push_back(make_pair(x, y));
+	_controls.push_back(Vector2f(x, y));
 	if(regen)
 		Regenerate();
 	return *this;
 }
 Vector2f BezierCurve::RemovePoint(Vector2f p, int range){
-	return RemovePoint(p.first, p.second, range);
+	return RemovePoint(p.x, p.y, range);
 }
 Vector2f BezierCurve::RemovePoint(int x, int y, int range){
 	vector<Vector2f>::iterator it;
 	int range_2 = range*range; //range^2, since the search uses pythagorean theorem
 	
 	for(it = _controls.begin(); it < _controls.end(); it++){
-		if(((*it).first - x)*((*it).first - x) + ((*it).second - y)*((*it).second - y) <= range_2){ //distance formula. If the distance between this point and the clicked spot is less than 5, its within threshold
+		if(((*it).x - x)*((*it).x - x) + ((*it).y - y)*((*it).y - y) <= range_2){ //distance formula. If the distance between this point and the clicked spot is less than 5, its within threshold
 			_controls.erase(it);
 			Regenerate();
 			return *it;
 		}
 	}
 	
-	return make_pair(-1, -1);
+	return Vector2f(-1, -1);
 }
 Vector2f BezierCurve::RemovePoint(int index){
 	if(index >= (signed int) _controls.size()){ //if the index is too high, error by returning -1
-		return make_pair(-1, -1);
+		return Vector2f(-1, -1);
 	}
 	else if(index < 0){ //negative index is treated as that many from the top, so -1 is the last element
 		index = _controls.size() + index;
@@ -213,7 +213,7 @@ Color4f BezierCurve::GetBoundingLineColor(){
 }
 
 BezierCurve& BezierCurve::Scale(double factor, Vector2f center){
-	return this->Scale(center.first, center.second);
+	return this->Scale(center.x, center.y);
 }
 
 BezierCurve& BezierCurve::Offset(float centerX, float centerY){
@@ -221,8 +221,8 @@ BezierCurve& BezierCurve::Offset(float centerX, float centerY){
 	vector<Vector2f>::iterator it;
 	
 	for(it = _controls.begin(); it < _controls.end(); it++){
-		it->first = (((it->first + _scaleOffsets.first)/_scaleFactor)) - centerX; //undo the last scale so that the point is completely unscaled, then scale it to the new factor
-		it->second = (((it->second + _scaleOffsets.second)/_scaleFactor)) - centerY;
+		it->x = (((it->x + _scaleOffsets.x)/_scaleFactor)) - centerX; //undo the last scale so that the point is completely unscaled, then scale it to the new factor
+		it->y = (((it->y + _scaleOffsets.y)/_scaleFactor)) - centerY;
 	}
 	
 	if(_canvasTime != 0){ //if an animation was in progress, start over and reanimate silently up to the point where the animation was paused
@@ -235,8 +235,8 @@ BezierCurve& BezierCurve::Offset(float centerX, float centerY){
 		Regenerate();
 	}
 	
-	_scaleOffsets.first = centerX;
-	_scaleOffsets.second = centerY;
+	_scaleOffsets.x = centerX;
+	_scaleOffsets.y = centerY;
 	return *this;	
 }
 
@@ -247,8 +247,8 @@ BezierCurve& BezierCurve::Scale(double factor, float centerX, float centerY){
 	vector<Vector2f>::iterator it;
 	
 	for(it = _controls.begin(); it < _controls.end(); it++){
-		it->first = (((it->first + _scaleOffsets.first)/_scaleFactor) * factor) - offsetX; //undo the last scale so that the point is completely unscaled, then scale it to the new factor
-		it->second = (((it->second + _scaleOffsets.second)/_scaleFactor) * factor) - offsetY;
+		it->x = (((it->x + _scaleOffsets.x)/_scaleFactor) * factor) - offsetX; //undo the last scale so that the point is completely unscaled, then scale it to the new factor
+		it->y = (((it->y + _scaleOffsets.y)/_scaleFactor) * factor) - offsetY;
 	}
 	
 	if(_canvasTime != 0){ //if an animation was in progress, start over and reanimate silently up to the point where the animation was paused
@@ -262,8 +262,8 @@ BezierCurve& BezierCurve::Scale(double factor, float centerX, float centerY){
 	}
 	
 	_scaleFactor = factor;
-	_scaleOffsets.first = offsetX;
-	_scaleOffsets.second = offsetY;
+	_scaleOffsets.x = offsetX;
+	_scaleOffsets.y = offsetY;
 	return *this;
 }
 
@@ -280,7 +280,7 @@ BezierCurve& BezierCurve::DrawCurve(){
 	glBegin(GL_LINE_STRIP);
 	glColor4f(_color.r, _color.g, _color.b, _color.a);
 	for(int i = 0; i < _points.size(); i++){
-		glVertex3f(_points[i].first, _points[i].second, 0);
+		glVertex3f(_points[i].x, _points[i].y, 0);
 	}
 	glEnd();
 	
@@ -293,7 +293,7 @@ BezierCurve& BezierCurve::DrawControls(){
 	for(it = _controls.begin(); it < _controls.end(); it++){
 		glBegin(GL_POLYGON);
 		for(int ang = 0; ang < 360; ang++){
-			glVertex2f(_vertexRadius*cos(ang*PI/180) + it->first, _vertexRadius*sin(ang*PI/180) + it->second);
+			glVertex2f(_vertexRadius*cos(ang*PI/180) + it->x, _vertexRadius*sin(ang*PI/180) + it->y);
 		}
 		glEnd();
 	}
@@ -307,7 +307,7 @@ BezierCurve& BezierCurve::DrawBoundingLines(){
 	glBegin(GL_LINE_STRIP);
 	glColor4f(_boundingLineColor.r, _boundingLineColor.g, _boundingLineColor.b, _boundingLineColor.a);
 	for(it = _controls.begin(); it < _controls.end(); it++){
-		glVertex2f(it->first, it->second);
+		glVertex2f(it->x, it->y);
 	}
 	glEnd();
 	
@@ -320,7 +320,7 @@ BezierCurve& BezierCurve::DrawCalcLines(){
 	glBegin(GL_POLYGON);
 	glColor4f(_controlColor.r, _controlColor.g, _controlColor.b, _controlColor.a);
 	for(int ang = 0; ang < 360; ang++){
-		glVertex2f(_vertexRadius*cos(ang*RADIANS) + p.first, _vertexRadius*sin(ang*RADIANS) + p.second);
+		glVertex2f(_vertexRadius*cos(ang*RADIANS) + p.x, _vertexRadius*sin(ang*RADIANS) + p.y);
 	}
 	glEnd();
 	
@@ -330,7 +330,7 @@ BezierCurve& BezierCurve::DrawCalcLines(){
 BezierCurve& BezierCurve::CalcFrame(double t){
 	if(_controls.size() != 0){ //do not do any animating with no control points
 		
-		if(t == 0){ //on the first time iteration the pixels must be cleared
+		if(t == 0){ //on the x time iteration the pixels must be cleared
 			_points.clear();
 		}
 		
@@ -345,7 +345,7 @@ BezierCurve& BezierCurve::CalcFrame(double t){
 	return *this;
 }
 BezierCurve& BezierCurve::Clear(){
-	_scaleOffsets = make_pair(0,0);
+	_scaleOffsets = Vector2f(0,0);
 	_scaleFactor = 1;
 	_controls.clear();
 	_points.clear();

@@ -4,8 +4,8 @@ double DistanceFromCurve(std::vector<kd::Vector2f>& pixels, sf::Vector2f current
 	std::vector<kd::Vector2f>::iterator it;
 	double cVal = INT_MAX;
 	for(it = pixels.begin(); it < pixels.end(); it++){ //find least distance to the curve
-		if(it->second > (int)currentPos.y - 100 && it->second < (int)currentPos.y + 100){
-			int dist = abs(currentPos.x - it->first);
+		if((int)it->y > ((int)currentPos.y - 20) && (int)it->y < ((int)currentPos.y + 20)){
+			int dist = abs(currentPos.x - it->x);
 			if(dist < cVal)
 				cVal = dist;
 		}
@@ -20,11 +20,11 @@ void PointsToPixels(vector<kd::Vector2f>& points, vector<kd::Vector2f>& pixels, 
 	std::vector<kd::Vector2f>::iterator it;
 	float oldX=-1, oldY=-1;
 	for(it = points.begin(); it < points.end(); it++){
-		float x = (width/20)*(it->first) + halfWidth;
-		float y = halfHeight - ((height/20)*(it->second));
+		float x = (width/20)*(it->x) + halfWidth;
+		float y = halfHeight - ((height/20)*(it->y));
 		
 		if(x != oldX || y != oldY){
-			pixels.push_back(make_pair(x, y));
+			pixels.push_back(kd::Vector2f(x, y));
 			oldX = x;
 			oldY = y;
 		}
@@ -46,10 +46,10 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 	std::vector<kd::Vector2f>::iterator it;
 	for(it = pixels.begin(); it < pixels.end(); it++){
 		
-		int n = it->second + height*level;
+		int n = it->y + height*level;
 		
-		for(int i = 0; i < it->first; i++){
-			double t = (double)i/it->first;
+		for(int i = 0; i < it->x; i++){
+			double t = (double)i/it->x;
 			if(t < 0)
 				t = 0;
 			else if(t > 1)
@@ -60,8 +60,8 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 				destination->SetPixel(i, n, color);
 			
 		}
-		for(int i = it->first; i <= width; i++){
-			double t = (double)(i-it->first)/(double)(width-it->first);
+		for(int i = it->x; i <= width; i++){
+			double t = (double)(i-it->x)/(double)(width-it->x);
 			if(t < 0)
 				t = 0;
 			else if(t > 1)
@@ -103,8 +103,8 @@ void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::Ren
 	
 	vector<kd::Vector2f>::iterator it;
 	for(it = lPixels.begin(); it < lPixels.end(); it++){
-		if((int)(it->second) == (int)(position.y)){
-			int xDist = it->first - position.x;
+		if((int)(it->y) == (int)(position.y)){
+			int xDist = it->x - position.x;
 			if(xDist > 0){
 				player.StopMotion(Ship::West);
 				player.StartMotion(Ship::East, (rand()%25)/10.f * 100);
