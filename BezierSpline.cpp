@@ -29,11 +29,11 @@ BezierSpline& BezierSpline::AddPoint(Vector2f p,  bool regen){
 }
 BezierSpline& BezierSpline::AddPoint(int x, int y, bool regen){
 	_curves.back().AddPoint(x, y, regen);
-	_controls.push_back(make_pair(x, y));
+	_controls.push_back(Vector2f(x, y));
 	return *this;
 }
 Vector2f BezierSpline::RemovePoint(Vector2f p, int range){
-	return RemovePoint(p.first, p.second, range);
+	return RemovePoint(p.x, p.y, range);
 }
 Vector2f BezierSpline::RemovePoint(int x, int y, int range){
 	return _curves.back().RemovePoint(x, y, range);
@@ -121,7 +121,7 @@ Color4f BezierSpline::GetBoundingLineColor(){
 }
 
 BezierSpline& BezierSpline::Scale(double factor, Vector2f center){
-	return this->Scale(center.first, center.second);
+	return this->Scale(center.x, center.y);
 }
 
 BezierSpline& BezierSpline::Offset(float centerX, float centerY){
@@ -168,7 +168,7 @@ BezierSpline& BezierSpline::DrawCalcLines(){
 }
 
 BezierSpline& BezierSpline::Clear(){
-	_scaleOffsets = make_pair(0,0);
+	_scaleOffsets = Vector2f(0,0);
 	_scaleFactor = 1;
 	_controls.clear();
 	_points.clear();

@@ -149,12 +149,14 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	 */
 	
 	for(vector<Ship>::iterator it=neighbors.begin(); it!=neighbors.end(); ++it){
-		if(this != &(*it) && Collision::CircleTest((Sprite)(*this), (Sprite)(*it)) && Collision::BoundingBoxTest((Sprite)(*this), (Sprite)(*it))){
+		if(this != &(*it) && Collision::CircleTest((Sprite)(*this), (Sprite)(*it)) && Collision::PixelPerfectTest((Sprite)(*this), (Sprite)(*it))){
 			sf::Vector2f slope = this->GetPosition() - it->GetPosition();
-			slope.x = slope.x * northStep*elapsed/500.f;
-			slope.y = slope.y * northStep*elapsed/500.f;
+			slope.x = slope.x * northStep*elapsed/300.f;
+			slope.y = slope.y * northStep*elapsed/300.f;
 			it->Move(slope);
-			this->Move(0-slope.x, 0-slope.y);
+			slope.x *= -1;
+			slope.y *= -1;
+			this->Move(slope);
 			northStep += value;
 			return slope + sf::Vector2f(0, -1*value*elapsed);
 		}

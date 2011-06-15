@@ -15,7 +15,16 @@ using namespace std;
 
 namespace kd{
 	
-	typedef pair<float, float> Vector2f;
+	typedef struct Vector2f{
+		float x, y;
+		Vector2f(float _x=0, float _y=0) : x(_x), y(_y){};
+		bool operator !=(const Vector2f& that){
+			return !(*this == that);
+		}
+		bool operator ==(const Vector2f& that){
+			return (this->x == that.x && this->y == that.y);
+		}
+	} Vector2f;
 	
 	typedef struct Color4f{
 		int r, g, b, a;
@@ -127,7 +136,7 @@ namespace kd{
 		
 		BezierCurve& SetSize(int width, int height); //alter the size of the canvas
 		BezierCurve& Offset(float centerX, float centerY);
-		BezierCurve& Scale(double factor, Vector2f center=make_pair(0,0)); //scale the points by the given factor and centered on the given center, used for zooming. The factor is relative to the original set of points
+		BezierCurve& Scale(double factor, Vector2f center=Vector2f(0,0)); //scale the points by the given factor and centered on the given center, used for zooming. The factor is relative to the original set of points
 		BezierCurve& Scale(double factor, float centerX=0, float centerY=0);
 		
 		BezierCurve& Clear(); //erase all control points and curve points
@@ -201,7 +210,7 @@ namespace kd{
 		
 		BezierSpline& SetSize(int width, int height); //alter the size of the canvas
 		BezierSpline& Offset(float centerX, float centerY);
-		BezierSpline& Scale(double factor, Vector2f center=make_pair(0,0)); //scale the points by the given factor and centered on the given center, used for zooming. The factor is relative to the original set of points
+		BezierSpline& Scale(double factor, Vector2f center=Vector2f(0,0)); //scale the points by the given factor and centered on the given center, used for zooming. The factor is relative to the original set of points
 		BezierSpline& Scale(double factor, float centerX=0, float centerY=0);
 		
 		BezierSpline& Clear(); //erase all control points and curve points		
