@@ -6,17 +6,26 @@ using namespace std;
 using namespace kd;
 namespace kd{
 	class Particle : public sf::Drawable{
-	public:
-		sf::Color deltaColor;
+	private:
+		sf::Color deltaColor, finalColor;
 		sf::Vector2f deltaPosition;
-		float lifetime;
-		
+		float lifetime, age;
+		bool _useFinal;
+	public:
 		Particle();
 		
-		Particle& SetDeltaPosition(sf::Vector2f delta);
-		Particle& SetDeltaColor(sf::Color delta);
-		
 		Particle& SetLifetime(float nLife);
+		float GetLifetime();
+		
+		float GetAge();
+		
+		Particle& SetPositionDelta(sf::Vector2f delta);
+		sf::Vector2f GetPositionDelta();
+		Particle& SetColorDelta(sf::Color delta);
+		Particle& SetFinalColor(sf::Color final);
+		sf::Color GetColorDelta();
+		
+		void Update(float elapsed);
 		virtual void Render(sf::RenderTarget& target) const;
 	};
 }

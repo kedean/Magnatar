@@ -2,7 +2,9 @@
 
 #pragma once
 #include<iostream>
+#include<vector>
 #include "Collision.h"
+#include "Emitter.h"
 
 using namespace std;
 using namespace sf;
@@ -11,6 +13,8 @@ class Ship : public sf::Sprite{
 private:
 	
 	unsigned int m_health, m_maxHealth;
+	vector<Emitter> _effects;
+	Emitter _hEffect, _vEffect;
 	
 	//movement vars
 	int eastStep, westStep, northStep, southStep;

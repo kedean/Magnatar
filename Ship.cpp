@@ -10,6 +10,7 @@ Ship::Ship(sf::Image* image, const sf::Vector2f &Position, const sf::Vector2f &S
 	eastStep = westStep = northStep = southStep = 0;
 	
 	m_health = m_maxHealth = 50;
+	_hEffect.SetPosition(-1, -1);
 }
 
 unsigned int Ship::GetHealth(){
@@ -121,6 +122,23 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	
 	int xStep = (eastStep + westStep);
 	int yStep = (northStep + southStep);
+	
+	if(xStep > 0){
+		if(_hEffect.GetPosition().x >= this->GetPosition().x || _hEffect.GetPosition().x == -1){
+			_hEffect = Emitter(120, 240, 25, 3).Begin();
+		}
+		_hEffect.SetPosition(this->GetPosition() - sf::Vector2f(this->GetSize().x-1, this->GetSize().y/2));
+		_hEffect.Update(elapsed);
+		App.Draw(_hEffect);
+	}
+	else if(xStep < 0){
+		if(_hEffect.GetPosition().x <= this->GetPosition().x || _hEffect.GetPosition().x == -1){
+			_hEffect = Emitter(-60, 60, 25, 3).Begin();
+		}
+		_hEffect.SetPosition(this->GetPosition() + sf::Vector2f(1, this->GetSize().y/-2));
+		_hEffect.Update(elapsed);
+		App.Draw(_hEffect);
+	}
 	
 	if(xStep == 0 && yStep == 0) //nothing to do, Ship is not in motion
 		return sf::Vector2f(0, 0);

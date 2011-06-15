@@ -96,7 +96,7 @@ int main(){
 	
 	//set up pause screen
 	
-	game.Restart(); //game starts paused
+	game.Start(); //game starts paused
 	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
 	
 	float fadeCountdown = 0;
@@ -105,6 +105,8 @@ int main(){
 		FADING_OUT,
 		IDLE
 	} fade = IDLE;
+	
+	vector<Emitter> effects;
 	
     // Start game loop
     while (App.IsOpened())
@@ -158,6 +160,7 @@ int main(){
 		App.Clear();
 		
 		float height = App.GetHeight();
+		sf::Vector2f oldCenter = view.GetCenter();
 		
 		int mBound = abs((view.GetCenter().y - height) - height/2) / height;
 		float elapsed = App.GetFrameTime();
@@ -204,6 +207,13 @@ int main(){
 			for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
 				App.Draw(*playerIt);
 			}
+		}
+		
+		vector<Emitter>::iterator emitIt;
+		for(emitIt = effects.begin(); emitIt < effects.end(); emitIt++){
+			emitIt->Move(0, view.GetCenter().y - oldCenter.y);
+			emitIt->Update(elapsed);
+			App.Draw(*emitIt);
 		}
 		
 		/*Display the HUD*/
@@ -297,7 +307,6 @@ int main(){
 			sf::Sleep(1.f);
 			timer--;
 		}
-		
 		
 	/*
 		glMatrixMode(GL_MODELVIEW);
