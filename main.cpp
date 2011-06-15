@@ -4,7 +4,7 @@
 #include "Ship.h"
 #include "Bezier.h"
 #include "Helpers.h"
-
+#include "Emitter.h"
 
 
 int main(){
@@ -109,8 +109,7 @@ int main(){
     // Start game loop
     while (App.IsOpened())
     {
-		
-        // Process events
+		// Process events
         sf::Event Event;
         while (App.GetEvent(Event))
         {
@@ -309,6 +308,7 @@ int main(){
 		spline.DrawCurve().DrawControls();
 		
 		*/
+		
         App.Display();
 		
     }
