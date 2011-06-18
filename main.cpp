@@ -96,7 +96,7 @@ int main(){
 	
 	//set up pause screen
 	
-	game.Start(); //game starts paused
+	game.Restart(); //game starts paused
 	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
 	
 	float fadeCountdown = 0;
@@ -170,6 +170,7 @@ int main(){
 		App.Draw(gradientSprites[mBound + 1]);
 		
 		static int playerVal = 0;
+		int playerPlace;
 		vector<Ship>::iterator playerIt;
 		
 		if(game.IsPaused() == false && fade == IDLE){ //paused games should not update the players
@@ -187,18 +188,30 @@ int main(){
 				else
 					forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
 				forwardVal = (forwardVal*forwardVal)/1000; //square and scale down
-				int t = playerIt->GetPosition().y;
+				
+				int pointOfRef = playerIt->GetPosition().y;
+				int place = 0; //initial place is zero. The iterator will pass over the player as well, so the offset is made there
+				vector<Ship>::iterator placeIt;
+				for(placeIt = playerList.begin(); placeIt < playerList.end(); placeIt++){
+					if(placeIt->GetPosition().y < pointOfRef)
+						place++;
+				}
+				forwardVal += 7*place; //socialism! this causes further back players to move faster.
 				
 				sf::Vector2f moved = playerIt->Update(forwardVal, elapsed, App, playerList);
 				
 				if(&(*playerIt) == player){ //player char. Move the camera and update his vars
 					view.SetCenter(view.GetCenter().x, player->GetPosition().y - 200);
 					playerVal = forwardVal;
+					playerPlace = place;
 				}
 				else {
 					AIUpdatePlayer(*playerIt, spline.GetCurve(cIndex), elapsed, &App);
 				}
 
+				
+				
+				
 				
 				App.Draw(*playerIt);
 			}
@@ -231,12 +244,7 @@ int main(){
 		App.Draw(powerBar);
 		
 		//determine the rank of player char
-		int pointOfRef = player->GetPosition().y;
-		int playerPlace = 0; //initial place is zero. The iterator will pass over the player as well, so the offset is made there
-		for(playerIt = playerList.begin(); playerIt < playerList.end(); playerIt++){
-			if(playerIt->GetPosition().y < pointOfRef)
-				playerPlace++;
-		}
+		
 		switch(playerPlace){
 			case 1:
 				placingText.SetText("1st");

@@ -1,28 +1,28 @@
 TMagnatar
 v7
 r0
-t329867745.010488
+t330116597.478699
 cCheck dependencies
-cProcessInfoPlistFile /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Info.plist Info.plist
+cProcessInfoPlistFile /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/Info.plist Info.plist
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship0.png ships/ship0.png
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship1.png ships/ship1.png
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship2.png ships/ship2.png
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship3.png ships/ship3.png
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship4.png ships/ship4.png
 cCpResource build/Debug/Magnatar.app/Contents/Resources/ship5.png ships/ship5.png
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o /Users/kevindean/Magnatar/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o /Users/kevindean/Magnatar/Ship.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o /Users/kevindean/Magnatar/BezierCurve.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o /Users/kevindean/Magnatar/BezierSpline.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o /Users/kevindean/Magnatar/Collision.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o /Users/kevindean/Magnatar/Helpers.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o /Users/kevindean/Magnatar/Emitter.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o /Users/kevindean/Magnatar/Particle.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cLd /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar normal i386
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o /Users/kevin/Programs/Magnatar/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o /Users/kevin/Programs/Magnatar/Ship.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o /Users/kevin/Programs/Magnatar/BezierCurve.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o /Users/kevin/Programs/Magnatar/BezierSpline.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o /Users/kevin/Programs/Magnatar/Collision.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o /Users/kevin/Programs/Magnatar/Helpers.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o /Users/kevin/Programs/Magnatar/Emitter.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o /Users/kevin/Programs/Magnatar/Particle.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cLd /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar normal i386
 cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework /Library/Frameworks/sfml-system.framework
 cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework /Library/Frameworks/sfml-window.framework
 cPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework /Library/Frameworks/sfml-graphics.framework
-cTouch /Users/kevindean/Magnatar/build/Debug/Magnatar.app
+cTouch /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app
 
 N/Library/Frameworks/SFML.framework/Headers/Config.hpp
 c000000004BBA05180000000000001274
@@ -405,33 +405,33 @@ t1270482200
 s1896
 
 N/Library/Frameworks/sfml-graphics.framework
-c000000004BBA050600000000000000AA
-t1270482182
+c000000004BBA051700000000000000AA
+t1270482199
 s170
 
 N/Library/Frameworks/sfml-graphics.framework/sfml-graphics
-c000000004BBA050600000000004FCC40
-t1270482182
+c000000004BBA051800000000004FCC40
+t1270482200
 s5229632
 
 N/Library/Frameworks/sfml-system.framework
-c000000004BBA050600000000000000AA
-t1270482182
+c000000004BBA051800000000000000AA
+t1270482200
 s170
 
 N/Library/Frameworks/sfml-system.framework/sfml-system
-c000000004BBA050700000000001C45D8
-t1270482183
+c000000004BBA051800000000001C45D8
+t1270482200
 s1852888
 
 N/Library/Frameworks/sfml-window.framework
-c000000004BBA050700000000000000AA
-t1270482183
+c000000004BBA051800000000000000AA
+t1270482200
 s170
 
 N/Library/Frameworks/sfml-window.framework/sfml-window
-c000000004BBA050700000000001FC530
-t1270482183
+c000000004BBA051800000000001FC530
+t1270482200
 s2082096
 
 N/System/Library/Frameworks/OpenGL.framework/Headers/OpenGL.h
@@ -445,8 +445,8 @@ t1272074271
 s154457
 
 N/System/Library/Frameworks/OpenGL.framework/Headers/glu.h
-c0000000049EE83DA0000000000003F84
-t1240368090
+c000000004BD2501F0000000000003F84
+t1272074271
 s16260
 
 N/System/Library/Frameworks/OpenGL.framework/OpenGL
@@ -750,15 +750,17 @@ t1308019254
 s3132
 
 N/Users/kevin/Programs/Magnatar/Emitter.cpp
-c000000004DF90A9D000000000000006F
-t1308166813
-s111
+c000000004DFA4C3F00000000000006DA
+t1308249151
+s1754
 i"Emitter.h"
+i<cstdlib>
+i<cmath>
 
 N/Users/kevin/Programs/Magnatar/Emitter.h
-c000000004DF9035D000000000000019D
-t1308164957
-s413
+c000000004DFA4DF700000000000003DD
+t1308249591
+s989
 i"Particle.h"
 i<vector>
 
@@ -778,34 +780,36 @@ i"Bezier.h"
 i"Ship.h"
 
 N/Users/kevin/Programs/Magnatar/Particle.cpp
-c000000004DF9028A0000000000000343
-t1308164746
-s835
+c000000004DF92D8B000000000000073D
+t1308175755
+s1853
 i"Particle.h"
 
 N/Users/kevin/Programs/Magnatar/Particle.h
-c000000004DF9001200000000000001C4
-t1308164114
-s452
+c000000004DF92D8B00000000000002A7
+t1308175755
+s679
 i"Bezier.h"
 i<SFML/Graphics.hpp>
 
 N/Users/kevin/Programs/Magnatar/Ship.cpp
-c000000004DF7F4DF0000000000000D30
-t1308095711
-s3376
+c000000004DFA4C490000000000000FE2
+t1308249161
+s4066
 i"Ship.h"
 
 N/Users/kevin/Programs/Magnatar/Ship.h
-c000000004DF6EFE200000000000003D1
-t1308028898
-s977
+c000000004DF92D8B000000000000042F
+t1308175755
+s1071
 i<SFML/Graphics.hpp>
 i<iostream>
+i<vector>
 i"Collision.h"
+i"Emitter.h"
 
 N/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app
-t1308166813
+t1308423797
 s102
 
 N/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework
@@ -825,8 +829,8 @@ t1308024458
 s606
 
 N/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar
-t1308166813
-s213360
+t1308423797
+s274528
 
 N/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/PkgInfo
 t1308024458
@@ -869,34 +873,34 @@ t1308019259
 s120604
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o
-t1308166813
-s69392
+t1308250554
+s119224
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o
-t1308116417
-s226376
+t1308250554
+s239864
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList
-c000000004DF846B8000000000000033E
-t1308116664
+c000000004DF92D8F000000000000033E
+t1308175759
 s830
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o
-t1308164747
-s57908
+t1308175760
+s61748
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
-t1308095712
-s178256
+t1308250553
+s254516
 
 N/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
-t1308164958
-s414544
+t1308423797
+s530704
 
 N/Users/kevin/Programs/Magnatar/main.cpp
-c000000004DF902CD000000000000231B
-t1308164813
-s8987
+c000000004DFCF6740000000000002491
+t1308423796
+s9361
 i<SFML/Graphics.hpp>
 i<SFML/Window.hpp>
 i"Ship.h"
@@ -934,218 +938,6 @@ c000000004DF6D5EE0000000000000C87
 t1308022254
 s3207
 
-N/Users/kevindean/Magnatar/Bezier.h
-c000000004DF90AEE000000000000225D
-t1308166894
-s8797
-i<vector>
-i<OpenGL/OpenGL.h>
-i<OpenGL/glu.h>
-i<GL/GL.h>
-i<GL/glu.h>
-i<cmath>
-
-N/Users/kevindean/Magnatar/BezierCurve.cpp
-c000000004DF90AEE00000000000026F3
-t1308166894
-s9971
-i"Bezier.h"
-i<iostream>
-
-N/Users/kevindean/Magnatar/BezierSpline.cpp
-c000000004DF90AEE0000000000001335
-t1308166894
-s4917
-i"Bezier.h"
-
-N/Users/kevindean/Magnatar/Collision.cpp
-c000000004DF7D8210000000000002132
-t1308088353
-s8498
-i<SFML/Graphics.hpp>
-i"Collision.h"
-
-N/Users/kevindean/Magnatar/Collision.h
-c000000004DF7D8210000000000000C3C
-t1308088353
-s3132
-
-N/Users/kevindean/Magnatar/Emitter.cpp
-c000000004DF9274A00000000000005DB
-t1308174154
-s1499
-
-N/Users/kevindean/Magnatar/Emitter.h
-c000000004DF9271E0000000000000235
-t1308174110
-s565
-
-N/Users/kevindean/Magnatar/Helpers.cpp
-c000000004DF90AEE0000000000000E2C
-t1308166894
-s3628
-i"Helpers.h"
-
-N/Users/kevindean/Magnatar/Helpers.h
-c000000004DF90AEE0000000000000795
-t1308166894
-s1941
-i<vector>
-i<SFML/Graphics.hpp>
-i"Bezier.h"
-i"Ship.h"
-
-N/Users/kevindean/Magnatar/Particle.cpp
-c000000004DF92028000000000000073D
-t1308172328
-s1853
-
-N/Users/kevindean/Magnatar/Ship.cpp
-c000000004DF92A600000000000000FB8
-t1308174944
-s4024
-i"Ship.h"
-
-N/Users/kevindean/Magnatar/Ship.h
-c000000004DF92803000000000000042F
-t1308174339
-s1071
-i<SFML/Graphics.hpp>
-i<iostream>
-i<vector>
-i"Collision.h"
-i"Emitter.h"
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app
-t1308174945
-s102
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework
-t1308088353
-s170
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Frameworks/sfml-system.framework
-t1308088353
-s170
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Frameworks/sfml-window.framework
-t1308088353
-s170
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Info.plist
-t1308088353
-s606
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar
-t1308174945
-s273820
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/PkgInfo
-t1308088353
-s8
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship0.png
-t1308088353
-s3730
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship1.png
-t1308088353
-s2141
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship2.png
-t1308088353
-s2643
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship3.png
-t1308088353
-s4658
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship4.png
-t1308088353
-s4873
-
-N/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Resources/ship5.png
-t1308088353
-s3207
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o
-t1308166894
-s126084
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o
-t1308166894
-s151724
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o
-t1308088353
-s120604
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o
-t1308174155
-s117028
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o
-t1308174569
-s239672
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList
-c000000004DF90B0A0000000000000316
-t1308166922
-s790
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o
-t1308172328
-s61668
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
-t1308174944
-s254184
-
-N/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
-t1308174569
-s529988
-
-N/Users/kevindean/Magnatar/main.cpp
-c000000004DF927C20000000000002435
-t1308174274
-s9269
-i<SFML/Graphics.hpp>
-i<SFML/Window.hpp>
-i"Ship.h"
-i"Bezier.h"
-i"Helpers.h"
-i"Emitter.h"
-
-N/Users/kevindean/Magnatar/ships/ship0.png
-c000000004DF7D8210000000000000E92
-t1308088353
-s3730
-
-N/Users/kevindean/Magnatar/ships/ship1.png
-c000000004DF7D821000000000000085D
-t1308088353
-s2141
-
-N/Users/kevindean/Magnatar/ships/ship2.png
-c000000004DF7D8210000000000000A53
-t1308088353
-s2643
-
-N/Users/kevindean/Magnatar/ships/ship3.png
-c000000004DF7D8210000000000001232
-t1308088353
-s4658
-
-N/Users/kevindean/Magnatar/ships/ship4.png
-c000000004DF7D8210000000000001309
-t1308088353
-s4873
-
-N/Users/kevindean/Magnatar/ships/ship5.png
-c000000004DF7D8210000000000000C87
-t1308088353
-s3207
-
 N/usr/include/math.h
 c000000004A5C14A000000000000004F1
 t1247548576
@@ -1161,24 +953,14 @@ c000000004BBD2CE90000000000002DF5
 t1270689001
 s11765
 
-N/usr/local/include/SFML/Graphics.hpp
-c000000004BBA050500000000000006DA
-t1270482181
-s1754
-
-N/usr/local/include/SFML/Window.hpp
-c000000004BBA0505000000000000069A
-t1270482181
-s1690
-
 NInfo.plist
-c000000004DF7D821000000000000027A
-t1308088353
+c000000004D92B314000000000000027A
+t1301459732
 s634
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies329867744#329867744#0(0"0(0#1#0"8618404704#0"0#
+lSLF07#2@18"Check dependencies330116596#330116596#0(0"0(0#1#0"8613329536#0"0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o "/Users/kevin/Downloads/Gradient 2 2/BezierCurve.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s329711970.346719
@@ -1206,9 +988,6 @@ xc++
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@54"Compile /Users/kevin/Programs/Magnatar/BezierCurve.cpp329809215#329809216#0(0"0(0#0#46"/Users/kevin/Programs/Magnatar/BezierCurve.cpp8623657536#1145"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/BezierCurve.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o0#
 
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierCurve.o /Users/kevindean/Magnatar/BezierCurve.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-r0
-
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o "/Users/kevin/Downloads/Gradient 2 2/BezierSpline.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s329711970.761917
 e329711971.118740
@@ -1235,9 +1014,6 @@ xc++
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@55"Compile /Users/kevin/Programs/Magnatar/BezierSpline.cpp329809216#329809216#0(0"0(0#0#47"/Users/kevin/Programs/Magnatar/BezierSpline.cpp8618775776#1147"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/BezierSpline.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o0#
 
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/BezierSpline.o /Users/kevindean/Magnatar/BezierSpline.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-r0
-
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o "/Users/kevin/Downloads/Gradient 2 2/Collision.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s329712060.732865
 e329712060.733982
@@ -1254,12 +1030,9 @@ lSLF07#2@57"Compile /Users/kevin/Downloads/Gradient 2 2/Collision.cpp329712060#3
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o /Users/kevin/Programs/Magnatar/Collision.cpp normal i386 c++ com.apple.compilers.gcc.4_2
 r0
 
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Collision.o /Users/kevindean/Magnatar/Collision.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-r0
-
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o /Users/kevin/Programs/Magnatar/Emitter.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329859613.335707
-e329859613.902496
+s329943353.766599
+e329943354.534235
 r1
 xCompileC
 xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o
@@ -1268,24 +1041,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@50"Compile /Users/kevin/Programs/Magnatar/Emitter.cpp329859613#329859613#0(0"0(0#0#42"/Users/kevin/Programs/Magnatar/Emitter.cpp8612290048#1137"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Emitter.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o0#
-
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o /Users/kevindean/Magnatar/Emitter.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329866954.744429
-e329866955.024940
-r1
-xCompileC
-xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o
-x/Users/kevindean/Magnatar/Emitter.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@45"Compile /Users/kevindean/Magnatar/Emitter.cpp329866954#329866955#0(0"0(0#0#37"/Users/kevindean/Magnatar/Emitter.cpp8617012192#1082"    cd /Users/kevindean/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevindean/Magnatar/build/Debug -I/Users/kevindean/Magnatar/build/Debug/include -I/usr/include -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevindean/Magnatar/Emitter.cpp -o /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o0#
+lSLF07#2@50"Compile /Users/kevin/Programs/Magnatar/Emitter.cpp329943353#329943354#0(0"0(0#0#42"/Users/kevin/Programs/Magnatar/Emitter.cpp8611226528#1137"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Emitter.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Emitter.o0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o /Users/kevin/Programs/Magnatar/Helpers.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329809216.493626
-e329809217.230136
+s329943353.433939
+e329943354.430571
 r1
 xCompileC
 xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o
@@ -1294,24 +1054,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@50"Compile /Users/kevin/Programs/Magnatar/Helpers.cpp329809216#329809217#0(0"0(0#0#42"/Users/kevin/Programs/Magnatar/Helpers.cpp8623410208#1137"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Helpers.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o0#
-
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o /Users/kevindean/Magnatar/Helpers.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329867368.443713
-e329867369.099898
-r1
-xCompileC
-xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o
-x/Users/kevindean/Magnatar/Helpers.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@45"Compile /Users/kevindean/Magnatar/Helpers.cpp329867368#329867369#0(0"0(0#0#37"/Users/kevindean/Magnatar/Helpers.cpp8615463264#1082"    cd /Users/kevindean/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevindean/Magnatar/build/Debug -I/Users/kevindean/Magnatar/build/Debug/include -I/usr/include -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevindean/Magnatar/Helpers.cpp -o /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o0#
+lSLF07#2@50"Compile /Users/kevin/Programs/Magnatar/Helpers.cpp329943353#329943354#0(0"0(0#0#42"/Users/kevin/Programs/Magnatar/Helpers.cpp8613391072#1137"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Helpers.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Helpers.o0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o /Users/kevin/Programs/Magnatar/Particle.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329857546.932750
-e329857547.503041
+s329868560.087684
+e329868560.733315
 r1
 xCompileC
 xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o
@@ -1320,20 +1067,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@51"Compile /Users/kevin/Programs/Magnatar/Particle.cpp329857546#329857547#0(0"0(0#0#43"/Users/kevin/Programs/Magnatar/Particle.cpp8614330784#1139"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Particle.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o0#
-
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o /Users/kevindean/Magnatar/Particle.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329865128.658487
-e329865128.955947
-r1
-xCompileC
-xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o
-x/Users/kevindean/Magnatar/Particle.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@46"Compile /Users/kevindean/Magnatar/Particle.cpp329865128#329865128#0(0"0(0#0#38"/Users/kevindean/Magnatar/Particle.cpp8615626464#1084"    cd /Users/kevindean/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevindean/Magnatar/build/Debug -I/Users/kevindean/Magnatar/build/Debug/include -I/usr/include -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevindean/Magnatar/Particle.cpp -o /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o0#
+lSLF07#2@51"Compile /Users/kevin/Programs/Magnatar/Particle.cpp329868560#329868560#0(0"0(0#0#43"/Users/kevin/Programs/Magnatar/Particle.cpp8615259712#1139"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Particle.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Particle.o0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o "/Users/kevin/Downloads/Gradient 2 2/Ship.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s329721886.253900
@@ -1349,8 +1083,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@52"Compile /Users/kevin/Downloads/Gradient 2 2/Ship.cpp329721886#329721886#0(0"0(0#0#44"/Users/kevin/Downloads/Gradient 2 2/Ship.cpp8602254304#1208"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/Ship.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o"0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o /Users/kevin/Programs/Magnatar/Ship.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329788512.252770
-e329788512.801925
+s329943352.584670
+e329943353.433649
 r1
 xCompileC
 xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
@@ -1359,20 +1093,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@47"Compile /Users/kevin/Programs/Magnatar/Ship.cpp329788512#329788512#0(0"0(0#0#39"/Users/kevin/Programs/Magnatar/Ship.cpp8617740544#1131"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Ship.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o0#
-
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o /Users/kevindean/Magnatar/Ship.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329867744.776839
-e329867744.959500
-r1
-xCompileC
-xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o
-x/Users/kevindean/Magnatar/Ship.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@42"Compile /Users/kevindean/Magnatar/Ship.cpp329867744#329867744#0(0"0(0#0#34"/Users/kevindean/Magnatar/Ship.cpp8618966496#1076"    cd /Users/kevindean/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevindean/Magnatar/build/Debug -I/Users/kevindean/Magnatar/build/Debug/include -I/usr/include -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevindean/Magnatar/Ship.cpp -o /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o0#
+lSLF07#2@47"Compile /Users/kevin/Programs/Magnatar/Ship.cpp329943352#329943353#0(0"0(0#0#39"/Users/kevin/Programs/Magnatar/Ship.cpp8598038784#1131"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/Ship.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Ship.o0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o "/Users/kevin/Downloads/Gradient 2 2/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s329721814.824034
@@ -1388,8 +1109,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@52"Compile /Users/kevin/Downloads/Gradient 2 2/main.cpp329721814#329721815#0(0"0(0#0#44"/Users/kevin/Downloads/Gradient 2 2/main.cpp8612540608#1208"    cd "/Users/kevin/Downloads/Gradient 2 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap" -iquote "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-I/Users/kevin/Downloads/Gradient 2 2/build/Debug/include" -I/usr/include "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386" "-I/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/DerivedSources" -c "/Users/kevin/Downloads/Gradient 2 2/main.cpp" -o "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o"0#
 
 CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o /Users/kevin/Programs/Magnatar/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329857757.745566
-e329857758.699065
+s330116596.668231
+e330116597.427865
 r1
 xCompileC
 xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
@@ -1398,20 +1119,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@47"Compile /Users/kevin/Programs/Magnatar/main.cpp329857757#329857758#0(0"0(0#0#39"/Users/kevin/Programs/Magnatar/main.cpp8599088608#1131"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/main.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o0#
-
-CCompileC build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o /Users/kevindean/Magnatar/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s329867368.441405
-e329867369.361976
-r1
-xCompileC
-xbuild/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o
-x/Users/kevindean/Magnatar/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@42"Compile /Users/kevindean/Magnatar/main.cpp329867368#329867369#0(0"0(0#0#34"/Users/kevindean/Magnatar/main.cpp8615769472#1076"    cd /Users/kevindean/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevindean/Magnatar/build/Debug -I/Users/kevindean/Magnatar/build/Debug/include -I/usr/include -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevindean/Magnatar/main.cpp -o /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o0#
+lSLF07#2@47"Compile /Users/kevin/Programs/Magnatar/main.cpp330116596#330116597#0(0"0(0#0#39"/Users/kevin/Programs/Magnatar/main.cpp8611523616#1131"    cd /Users/kevin/Programs/Magnatar    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-generated-files.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-own-target-headers.hmap -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-all-target-headers.hmap -iquote /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Magnatar-project-headers.hmap -F/Users/kevin/Programs/Magnatar/build/Debug -I/Users/kevin/Programs/Magnatar/build/Debug/include -I/usr/include -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources/i386 -I/Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/DerivedSources -c /Users/kevin/Programs/Magnatar/main.cpp -o /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/main.o0#
 
 CCpResource build/Debug/Magnatar.app/Contents/Resources/0.jpg 0.jpg
 s329714762.126923
@@ -1601,24 +1309,14 @@ xi386
 lSLF07#2@89"Link /Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/MacOS/Magnatar329721886#329721886#0(0"0(0#0#0"8612970560#502"    cd "/Users/kevin/Downloads/Gradient 2 2"    /Developer/usr/bin/g++-4.2 -arch i386 "-L/Users/kevin/Downloads/Gradient 2 2/build/Debug" "-F/Users/kevin/Downloads/Gradient 2 2/build/Debug" -filelist "/Users/kevin/Downloads/Gradient 2 2/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList" -framework sfml-graphics -framework sfml-system -framework sfml-window -framework OpenGL -o "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app/Contents/MacOS/Magnatar"0#
 
 CLd /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar normal i386
-s329859613.902591
-e329859613.945411
+s330116597.428389
+e330116597.475822
 r1
 xLd
 x/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar
 xnormal
 xi386
-lSLF07#2@84"Link /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar329859613#329859613#0(0"0(0#0#0"8615063520#467"    cd /Users/kevin/Programs/Magnatar    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/kevin/Programs/Magnatar/build/Debug -F/Users/kevin/Programs/Magnatar/build/Debug -filelist /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList -framework sfml-graphics -framework sfml-system -framework sfml-window -framework OpenGL -o /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar0#
-
-CLd /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar normal i386
-s329867744.959906
-e329867745.007427
-r1
-xLd
-x/Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar
-xnormal
-xi386
-lSLF07#2@79"Link /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar329867744#329867745#0(0"0(0#0#0"8618287360#442"    cd /Users/kevindean/Magnatar    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/kevindean/Magnatar/build/Debug -F/Users/kevindean/Magnatar/build/Debug -filelist /Users/kevindean/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList -framework sfml-graphics -framework sfml-system -framework sfml-window -framework OpenGL -o /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar0#
+lSLF07#2@84"Link /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar330116597#330116597#0(0"0(0#0#0"8613339040#467"    cd /Users/kevin/Programs/Magnatar    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/kevin/Programs/Magnatar/build/Debug -F/Users/kevin/Programs/Magnatar/build/Debug -filelist /Users/kevin/Programs/Magnatar/build/Magnatar.build/Debug/Magnatar.build/Objects-normal/i386/Magnatar.LinkFileList -framework sfml-graphics -framework sfml-system -framework sfml-window -framework OpenGL -o /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/MacOS/Magnatar0#
 
 CPBXCp build/Debug/Magnatar.app/Contents/Frameworks/sfml-graphics.framework /Library/Frameworks/sfml-graphics.framework
 s329717258.324231
@@ -1659,9 +1357,6 @@ lSLF07#2@18"Process Info.plist329717258#329717258#0(0"0(0#0#46"/Users/kevin/Down
 CProcessInfoPlistFile /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app/Contents/Info.plist Info.plist
 r0
 
-CProcessInfoPlistFile /Users/kevindean/Magnatar/build/Debug/Magnatar.app/Contents/Info.plist Info.plist
-r0
-
 CTouch "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app"
 s329721886.297512
 e329721886.300168
@@ -1671,18 +1366,10 @@ x/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app
 lSLF07#2@66"Touch /Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app329721886#329721886#0(0"0(0#0#0"8612317120#130"    cd "/Users/kevin/Downloads/Gradient 2 2"    /usr/bin/touch -c "/Users/kevin/Downloads/Gradient 2 2/build/Debug/Magnatar.app"0#
 
 CTouch /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app
-s329859613.945678
-e329859613.948264
+s330116597.476101
+e330116597.478664
 r1
 xTouch
 x/Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app
-lSLF07#2@61"Touch /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app329859613#329859613#0(0"0(0#0#0"8612993344#116"    cd /Users/kevin/Programs/Magnatar    /usr/bin/touch -c /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app0#
-
-CTouch /Users/kevindean/Magnatar/build/Debug/Magnatar.app
-s329867745.007686
-e329867745.010461
-r1
-xTouch
-x/Users/kevindean/Magnatar/build/Debug/Magnatar.app
-lSLF07#2@56"Touch /Users/kevindean/Magnatar/build/Debug/Magnatar.app329867745#329867745#0(0"0(0#0#0"8616787232#106"    cd /Users/kevindean/Magnatar    /usr/bin/touch -c /Users/kevindean/Magnatar/build/Debug/Magnatar.app0#
+lSLF07#2@61"Touch /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app330116597#330116597#0(0"0(0#0#0"8611307232#116"    cd /Users/kevin/Programs/Magnatar    /usr/bin/touch -c /Users/kevin/Programs/Magnatar/build/Debug/Magnatar.app0#
 

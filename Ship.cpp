@@ -125,7 +125,7 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	
 	if(xStep > 0){
 		if(_hEffect.GetPosition().x >= this->GetPosition().x || _hEffect.GetPosition().x == -1){
-			_hEffect = Emitter(120, 240, 25, 3).Begin();
+			_hEffect = Emitter(true, 120, 240, 25, 1).Begin();
 		}
 		_hEffect.SetPosition(this->GetPosition() - sf::Vector2f(this->GetSize().x-1, this->GetSize().y/2));
 		_hEffect.Update(elapsed);
@@ -133,11 +133,14 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	}
 	else if(xStep < 0){
 		if(_hEffect.GetPosition().x <= this->GetPosition().x || _hEffect.GetPosition().x == -1){
-			_hEffect = Emitter(-60, 60, 25, 3).Begin();
+			_hEffect = Emitter(true, -60, 60, 25, 1).Begin();
 		}
 		_hEffect.SetPosition(this->GetPosition() + sf::Vector2f(1, this->GetSize().y/-2));
 		_hEffect.Update(elapsed);
 		App.Draw(_hEffect);
+	}
+	else{
+		_hEffect.Reset();
 	}
 	
 	if(xStep == 0 && yStep == 0) //nothing to do, Ship is not in motion

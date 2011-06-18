@@ -2,7 +2,7 @@
 #include<cstdlib>
 #include<cmath>
 
-Emitter::Emitter(int minAngle, int maxAngle, int radius, float lifetime, sf::Vector2f position) : _lifetime(lifetime), _minAngle(minAngle), _maxAngle(maxAngle), _radius(radius), _active(false){
+Emitter::Emitter(bool continuous, int minAngle, int maxAngle, int radius, float lifetime, sf::Vector2f position) : _continuous(continuous), _lifetime(lifetime), _elapsedLastBirth(0), _minAngle(minAngle), _maxAngle(maxAngle), _radius(radius), _active(false){
 	this->SetPosition(position);
 	srand(time(NULL));
 }
@@ -19,6 +19,11 @@ Emitter& Emitter::Resume(){
 	_active = true;
 	return *this;
 }
+Emitter& Emitter::Reset(){
+	_particles.clear();
+	_elapsedLastBirth = 0;
+	return *this;
+}
 
 bool Emitter::IsActive(){
 	return _active;
@@ -26,7 +31,8 @@ bool Emitter::IsActive(){
 
 Emitter& Emitter::Update(float elapsed){
 	if(_active){
-		if(_particles.size() == 0){
+		if(_particles.size() == 0 || (_continuous && _elapsedLastBirth >= .2)){
+			_elapsedLastBirth = 0;
 			for(int i = 0; i < 50; i++){
 				Particle p;
 				p.SetPosition(0, 0);
@@ -51,6 +57,7 @@ Emitter& Emitter::Update(float elapsed){
 		
 		if(_particles.size() == 0)
 			this->_active = false;
+		_elapsedLastBirth += elapsed;
 	}
 	return *this;
 }
