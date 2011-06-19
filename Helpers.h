@@ -36,6 +36,7 @@ void PointsToPixels(vector<kd::Vector2f>& points, vector<kd::Vector2f>& pixels, 
 void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& application, sf::Image* destination);
 void ProgressGradients(void* UserData);
 void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::RenderWindow* App);
+sf::Unicode::Text IntToRank(int place);
 
 class GameState{ //contains the global state of the game in progress
 private:

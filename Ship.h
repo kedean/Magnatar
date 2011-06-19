@@ -40,7 +40,7 @@ public:
 		South
 	};
 	int GetSpeed(Direction dir);
-	void StartMotion(Direction dir, int speed=150);
+	void StartMotion(Direction dir, int speed=200);
 	void StopMotion(Direction);
 	void Jump();
 	

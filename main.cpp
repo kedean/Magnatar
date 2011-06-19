@@ -19,7 +19,7 @@ int main(){
 	
 	srand(time(NULL));
 	
-	const int gSize = 500; //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
+	const int gSize = 100; //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
 	
 	kd::BezierSpline spline;
 	spline.SetColor(kd::Color3f(255, 0, 0))
@@ -29,14 +29,21 @@ int main(){
 	/*Randomized curve generation loop*/
 	
 	spline.AddPoint(0, -10, false);
+	int direction = 1;
 	for(int n = 1; n < gSize; n++){
 		kd::Vector2f prevP = spline.GetControls().back();
 		
-		int r = (rand() % 6 - 3);
+		int r = (rand() % 2);
 		
-		int x = prevP.x + r;
-		if(x < -7 || x > 7) //if the new x is outside the threshold, reverse the alteration
-			x = prevP.x - r;
+		int x = prevP.x + r*direction;
+		if(x > 7){ //if the new x is outside the threshold, reverse the alteration
+			x = 7;
+			direction = -1;
+		}
+		else if(x < -7){
+			x = -7;
+			direction = 1;
+		}
 		
 		int y = n*5 - 10;
 		if(n+1 == gSize){ //last point on the curve should be centered, as should x one
@@ -65,7 +72,6 @@ int main(){
 	}
 	Ship* player = &playerList[0]; //instance that is being controlled
 	
-	
 	//Load up the level
 	
 	int cSize = spline.GetCurves().size();
@@ -76,6 +82,8 @@ int main(){
 	ProgressInfo gradientInfo(cSize, &App, gradientStorage, gradientSprites, &spline);
 	
 	ProgressGradients((void*)&gradientInfo); //preload the first few frames to prevent scratch at the start
+	ProgressGradients((void*)&gradientInfo);
+	ProgressGradients((void*)&gradientInfo);
 	
 	gradientInfo.constant = true;
 	
@@ -92,11 +100,11 @@ int main(){
 	powerBar.AddPoint(400, 18, sf::Color(255, 0, 0, 200));
 	powerBar.AddPoint(0, 18, sf::Color(255, 255, 0, 200));
 	
-	sf::String placingText("1st", sf::Font::GetDefaultFont(), 20);
+	sf::String placingText("", sf::Font::GetDefaultFont(), 20);
 	
 	//set up pause screen
 	
-	game.Restart(); //game starts paused
+	game.Restart(); //game starts paused with a countdown timer
 	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
 	
 	float fadeCountdown = 0;
@@ -156,7 +164,6 @@ int main(){
         }
 		
 		App.SetActive();
-		
 		App.Clear();
 		
 		float height = App.GetHeight();
@@ -167,10 +174,16 @@ int main(){
 		
 		App.Draw(gradientSprites[mBound - 1]);
 		App.Draw(gradientSprites[mBound]);
-		App.Draw(gradientSprites[mBound + 1]);
+		if(mBound+1 >= cSize){
+			fade = FADING_IN;
+			fadeCountdown = 2;
+			game.Pause();
+		}
+		else
+			App.Draw(gradientSprites[mBound + 1]);
 		
-		static int playerVal = 0;
-		int playerPlace;
+		static int playerVal = 0; //static so they will stay during pause screens (for display)
+		static int playerPlace = 1;
 		vector<Ship>::iterator playerIt;
 		
 		if(game.IsPaused() == false && fade == IDLE){ //paused games should not update the players
@@ -196,9 +209,8 @@ int main(){
 					if(placeIt->GetPosition().y < pointOfRef)
 						place++;
 				}
-				forwardVal += 7*place; //socialism! this causes further back players to move faster.
 				
-				sf::Vector2f moved = playerIt->Update(forwardVal, elapsed, App, playerList);
+				sf::Vector2f moved = playerIt->Update(forwardVal + 4*place, elapsed, App, playerList);
 				
 				if(&(*playerIt) == player){ //player char. Move the camera and update his vars
 					view.SetCenter(view.GetCenter().x, player->GetPosition().y - 200);
@@ -208,10 +220,6 @@ int main(){
 				else {
 					AIUpdatePlayer(*playerIt, spline.GetCurve(cIndex), elapsed, &App);
 				}
-
-				
-				
-				
 				
 				App.Draw(*playerIt);
 			}
@@ -243,28 +251,7 @@ int main(){
 		App.Draw(powerBorder);
 		App.Draw(powerBar);
 		
-		//determine the rank of player char
-		
-		switch(playerPlace){
-			case 1:
-				placingText.SetText("1st");
-				break;
-			case 2:
-				placingText.SetText("2nd");
-				break;
-			case 3:
-				placingText.SetText("3rd");
-				break;
-			case 4:
-				placingText.SetText("4th");
-				break;
-			case 5:
-				placingText.SetText("5th");
-				break;
-			case 6:
-				placingText.SetText("6th");
-				break;
-		}
+		placingText.SetText(IntToRank(playerPlace));
 		placingText.SetPosition(view.GetCenter() - view.GetHalfSize() + sf::Vector2f(App.GetWidth() - 50, 5));
 		App.Draw(placingText);
 		

@@ -14,8 +14,9 @@ namespace kd{
 		bool _continuous; //when true, the emitter will create more particles every .2 seconds, otherwise it dies after the initial burst
 		int _minAngle, _maxAngle; //bounding angles for the particle directions, in degrees
 		int _radius; //maximum distance a particle can travel per second
+		sf::Color _color;
 	public:
-		Emitter(bool continuous=true, int minAngle=0, int maxAngle=360, int radius=5, float lifetime=1, sf::Vector2f position=sf::Vector2f(0, 0));
+		Emitter(bool continuous=true, int minAngle=0, int maxAngle=360, int radius=5, float lifetime=1, sf::Vector2f position=sf::Vector2f(0, 0), sf::Color color=sf::Color(255, 255, 255));
 		
 		Emitter& Begin();
 		Emitter& Stop();

@@ -117,3 +117,30 @@ void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::Ren
 		}
 	}
 }
+
+sf::Unicode::Text IntToRank(int place){
+	char buff[100];
+	
+	if(place > 3 && place < 21) //any number between 4 and 20, inclusive, always uses the th suffix
+		sprintf(buff, "%dth", place);
+	else{ //otherwise, find the last digit
+		if(place < 0)
+			place = -place;
+		while(place > 10){
+			place /= 10;
+		}
+		switch(place){
+			case 1:
+				sprintf(buff, "%dst", place);
+				break;
+			case 2:
+				sprintf(buff, "%dnd", place);
+				break;
+			case 3:
+				sprintf(buff, "%drd", place);
+			default:
+				sprintf(buff, "%dth", place); //4-9 and 0 endings use th
+		}
+	}
+	return sf::Unicode::Text(buff);
+}

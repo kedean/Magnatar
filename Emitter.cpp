@@ -2,7 +2,7 @@
 #include<cstdlib>
 #include<cmath>
 
-Emitter::Emitter(bool continuous, int minAngle, int maxAngle, int radius, float lifetime, sf::Vector2f position) : _continuous(continuous), _lifetime(lifetime), _elapsedLastBirth(0), _minAngle(minAngle), _maxAngle(maxAngle), _radius(radius), _active(false){
+Emitter::Emitter(bool continuous, int minAngle, int maxAngle, int radius, float lifetime, sf::Vector2f position, sf::Color color) : _continuous(continuous), _lifetime(lifetime), _elapsedLastBirth(0), _minAngle(minAngle), _maxAngle(maxAngle), _radius(radius), _active(false), _color(color){
 	this->SetPosition(position);
 	srand(time(NULL));
 }
@@ -38,6 +38,7 @@ Emitter& Emitter::Update(float elapsed){
 				p.SetPosition(0, 0);
 				float angle = RADIANS * (rand() % (_maxAngle - _minAngle) + _minAngle);
 				int velocity = rand() % _radius;
+				p.SetColor(_color);
 				p.SetPositionDelta(sf::Vector2f(velocity * cos(angle), velocity * sin(angle)));
 				p.SetFinalColor(sf::Color(255, 255, 255, 0));
 				p.SetLifetime(_lifetime);
