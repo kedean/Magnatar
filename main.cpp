@@ -5,7 +5,7 @@
 #include "Bezier.h"
 #include "Helpers.h"
 #include "Emitter.h"
-
+#include "HUD.h"
 
 int main(){
 	sf::RenderWindow App(sf::VideoMode(900, 900*sf::VideoMode::GetDesktopMode().Height/sf::VideoMode::GetDesktopMode().Width), "Magnatar", sf::Style::Close);
@@ -93,19 +93,28 @@ int main(){
 	/*HUD setup*/
 	
 	int width = App.GetWidth();
-	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
+	
+	kd::HeadsUpDisplay HUD;
+	HUD.AddWidget("rank", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 20)), sf::Vector2f(width-50, 0));
+	
 	sf::Shape powerBar;
 	powerBar.AddPoint(0, 0, sf::Color(255, 255, 0, 200));
 	powerBar.AddPoint(400, 0, sf::Color(255, 0, 0, 200));
 	powerBar.AddPoint(400, 18, sf::Color(255, 0, 0, 200));
 	powerBar.AddPoint(0, 18, sf::Color(255, 255, 0, 200));
+	HUD.AddWidget("powerBar", (sf::Drawable*) (&powerBar), sf::Vector2f(6, 6));
 	
-	sf::String placingText("", sf::Font::GetDefaultFont(), 20);
+	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
+	HUD.AddWidget("powerBorder", (sf::Drawable*) (&powerBorder), sf::Vector2f(5, 5));
+	
 	
 	//set up pause screen
 	
 	game.Restart(); //game starts paused with a countdown timer
 	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
+	HUD.AddWidget("backdrop", (sf::Drawable*) (&backdrop));
+	
+	HUD.AddWidget("countdown", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 30)), sf::Vector2f(view.GetCenter() - sf::Vector2f(15, 15)));
 	
 	float fadeCountdown = 0;
 	enum FadeState{
@@ -230,13 +239,6 @@ int main(){
 			}
 		}
 		
-		vector<Emitter>::iterator emitIt;
-		for(emitIt = effects.begin(); emitIt < effects.end(); emitIt++){
-			emitIt->Move(0, view.GetCenter().y - oldCenter.y);
-			emitIt->Update(elapsed);
-			App.Draw(*emitIt);
-		}
-		
 		/*Display the HUD*/
 		
 		if(playerVal != 1){
@@ -246,16 +248,10 @@ int main(){
 			powerBar.SetPointPosition(2, playerVal, 18);
 			powerBar.SetPointPosition(3, 0, 18);
 		}
-		powerBorder.SetPosition(view.GetCenter() - view.GetHalfSize() + sf::Vector2f(5, 5));
-		powerBar.SetPosition(powerBorder.GetPosition() + sf::Vector2f(1, 1));
-		App.Draw(powerBorder);
-		App.Draw(powerBar);
 		
-		placingText.SetText(IntToRank(playerPlace));
-		placingText.SetPosition(view.GetCenter() - view.GetHalfSize() + sf::Vector2f(App.GetWidth() - 50, 5));
-		App.Draw(placingText);
+		static_cast<sf::String*>(HUD["rank"])->SetText(IntToRank(playerPlace));
 		
-		if(game.IsPaused() || fade != IDLE){ //display and fading of pause screen
+		if(game.IsPaused() || fade != IDLE){ //fading of pause screen
 			if(fade == FADING_IN){
 				int c = backdrop.GetColor().a;
 				int alpha = backdrop.GetColor().a + 150.f * elapsed/fadeCountdown;
@@ -274,8 +270,6 @@ int main(){
 					fade = IDLE;
 				}
 			}
-			backdrop.SetPosition(view.GetCenter() - view.GetHalfSize());
-			App.Draw(backdrop);
 		}
 		
 		if(game.IsReady()){ //Countdown screen, only appear at start of game
@@ -295,23 +289,14 @@ int main(){
 				sprintf(timerStr, "%d", timer);
 			else
 				sprintf(timerStr, "");
-
-			sf::String timerText(timerStr, sf::Font::GetDefaultFont(), 30);
-			timerText.SetPosition(view.GetCenter() - sf::Vector2f(15, 15));
-			App.Draw(timerText);
+			
+			static_cast<sf::String*>(HUD["countdown"])->SetText(timerStr);
 			sf::Sleep(1.f);
 			timer--;
 		}
 		
-	/*
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-		glTranslatef((view.GetCenter().x - 400.f) / 10.f, (20.f/600.f) * (view.GetCenter().y - 300.f), -10.f);
-		glRotatef(0,0,0,0);
-		
-		spline.DrawCurve().DrawControls();
-		
-		*/
+		HUD.SetPosition(view.GetCenter() - view.GetHalfSize());
+		App.Draw(HUD);
 		
         App.Display();
 		

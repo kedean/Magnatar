@@ -14,6 +14,7 @@
 		0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */; };
 		0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A34FA20139C624900C76FD9 /* OpenGL.framework */; };
 		0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A829FEF13A6E90D00C38F35 /* Collision.cpp */; };
+		0AB92E3713AE9FDE00B0CDA6 /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */; };
 		0AE6F56B13A7162E00994400 /* ship0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56513A7162E00994400 /* ship0.png */; };
 		0AE6F56C13A7162E00994400 /* ship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56613A7162E00994400 /* ship1.png */; };
 		0AE6F56D13A7162E00994400 /* ship2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56713A7162E00994400 /* ship2.png */; };
@@ -59,6 +60,8 @@
 		0A34FA20139C624900C76FD9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		0A829FEF13A6E90D00C38F35 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
 		0A829FF013A6E90D00C38F35 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
+		0AB92E3513AE9FDE00B0CDA6 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
 		0AE6F56513A7162E00994400 /* ship0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship0.png; path = ships/ship0.png; sourceTree = "<group>"; };
 		0AE6F56613A7162E00994400 /* ship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship1.png; path = ships/ship1.png; sourceTree = "<group>"; };
 		0AE6F56713A7162E00994400 /* ship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship2.png; path = ships/ship2.png; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				0AE78F6F13443F640063030D /* Ship.cpp */,
 				0A0ED32413A81B59004AF540 /* Helpers.h */,
 				0A0ED32513A81B59004AF540 /* Helpers.cpp */,
+				0AB92E3513AE9FDE00B0CDA6 /* HUD.h */,
+				0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				0A0ED32613A81B59004AF540 /* Helpers.cpp in Sources */,
 				0A0ED4F313A8780C004AF540 /* Emitter.cpp in Sources */,
 				0A0ED55213A87E14004AF540 /* Particle.cpp in Sources */,
+				0AB92E3713AE9FDE00B0CDA6 /* HUD.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
