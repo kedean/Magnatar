@@ -1,5 +1,9 @@
 #include<vector>
 #include<SFML/Graphics.hpp>
+
+#include<json_spirit.h>
+#include<fstream>
+
 #include "Bezier.h"
 #include "Ship.h"
 using namespace std;
@@ -37,6 +41,8 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 void ProgressGradients(void* UserData);
 void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::RenderWindow* App);
 sf::Unicode::Text IntToRank(int place);
+
+void ReadSettings(json_spirit::mObject* dest);
 
 class GameState{ //contains the global state of the game in progress
 private:

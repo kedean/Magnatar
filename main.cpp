@@ -7,7 +7,14 @@
 #include "Emitter.h"
 #include "HUD.h"
 
+#include<json_spirit.h>
+#include<fstream>
+#include<iostream>
+
 int main(){
+	json_spirit::mObject settings;
+	ReadSettings(&settings);
+	
 	sf::RenderWindow App(sf::VideoMode(900, 900*sf::VideoMode::GetDesktopMode().Height/sf::VideoMode::GetDesktopMode().Width), "Magnatar", sf::Style::Close);
 	//sf::Style::Fullscreen
 	App.SetFramerateLimit(120);
@@ -19,11 +26,28 @@ int main(){
 	
 	srand(time(NULL));
 	
-	const int gSize = 100; //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
+	int gSize;
+	json_spirit::mValue track_length = settings["track_length"];
+	if(track_length.type() == json_spirit::int_type)
+		gSize = track_length.get_int(); //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
+	else
+		gSize = 1000;
 	
 	kd::BezierSpline spline;
-	spline.SetColor(kd::Color3f(255, 0, 0))
-		  .SetVertexRadius(0.08f)
+	
+	json_spirit::mValue track_color = settings["track_color"];
+	if(track_color.type() == json_spirit::array_type){
+		json_spirit::mArray track_color_array = track_color.get_array();
+		while(track_color_array.size() < 3) //ensure 3 values, an r g and b
+			track_color_array.push_back(0);
+		spline.SetColor(kd::Color3f(track_color_array[0].get_int(), track_color_array[1].get_int(), track_color_array[2].get_int()));
+	}
+	else{
+		spline.SetColor(kd::Color3f(255, 0, 0));
+	}
+	
+	
+	spline.SetVertexRadius(0.08f)
 		  .SetThrottle(0.0001f); //throttle depends on number of digits in the number. As that goes up, the speed that throttle increases with gSize goes down, to allow for a smooth curve/gradient and all levels
 	
 	/*Randomized curve generation loop*/
@@ -46,7 +70,7 @@ int main(){
 		}
 		
 		int y = n*5 - 10;
-		if(n+1 == gSize){ //last point on the curve should be centered, as should x one
+		if(n+1 == gSize){ //last point on the curve should be centered
 			spline.AddPoint(0, y, false);
 		}
 		else if(n+2 < gSize && n % 4 == 0){ //new curve
@@ -62,13 +86,26 @@ int main(){
 	
 	//Load up the players
 	
-	sf::Image playerImages[6];
+	int nPlayers;
+	json_spirit::mValue num_players = settings["num_players"];
+	if(num_players.type() == json_spirit::int_type)
+		nPlayers = num_players.get_int(); //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
+	else
+		nPlayers = 6;
+	
+	sf::Image playerImages[nPlayers];
 	vector<Ship> playerList;
-	for(int i = 0; i < 6; i++){
+	for(int i = 0; i < nPlayers; i++){
 		char filename[100];
-		sprintf(filename, "ship%d.png", i);
+		sprintf(filename, "ship%d.png", (i == 0) ? 0 : ((i % 5) + 1)); //first player is always the same sprite, the others rotate among the other 5 sprites
 		playerImages[i].LoadFromFile(filename);
-		playerList.push_back(Ship(&(playerImages[i]), App.GetDefaultView().GetHalfSize() + sf::Vector2f((i-3)*100, 200), sf::Vector2f(1,1), 180.f));
+		int xPos;
+		if(i > nPlayers/2)
+			xPos = -1 *((i - nPlayers/2) * 100) - 50;
+		else
+			xPos = (i * 100) - 50;
+
+		playerList.push_back(Ship(&(playerImages[i]), App.GetDefaultView().GetHalfSize() + sf::Vector2f(xPos, 200), sf::Vector2f(1,1), 180.f));
 	}
 	Ship* player = &playerList[0]; //instance that is being controlled
 	
@@ -97,6 +134,9 @@ int main(){
 	kd::HeadsUpDisplay HUD;
 	HUD.AddWidget("rank", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 20)), sf::Vector2f(width-50, 0));
 	
+	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
+	HUD.AddWidget("powerBorder", (sf::Drawable*) (&powerBorder), sf::Vector2f(5, 5));
+	
 	sf::Shape powerBar;
 	powerBar.AddPoint(0, 0, sf::Color(255, 255, 0, 200));
 	powerBar.AddPoint(400, 0, sf::Color(255, 0, 0, 200));
@@ -104,16 +144,11 @@ int main(){
 	powerBar.AddPoint(0, 18, sf::Color(255, 255, 0, 200));
 	HUD.AddWidget("powerBar", (sf::Drawable*) (&powerBar), sf::Vector2f(6, 6));
 	
-	sf::Shape powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
-	HUD.AddWidget("powerBorder", (sf::Drawable*) (&powerBorder), sf::Vector2f(5, 5));
-	
-	
 	//set up pause screen
 	
 	game.Restart(); //game starts paused with a countdown timer
 	sf::Shape backdrop = sf::Shape::Rectangle(0, 0, App.GetWidth(), App.GetHeight(), sf::Color(0, 0, 0, 100));
 	HUD.AddWidget("backdrop", (sf::Drawable*) (&backdrop));
-	
 	HUD.AddWidget("countdown", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 30)), sf::Vector2f(view.GetCenter() - sf::Vector2f(15, 15)));
 	
 	float fadeCountdown = 0;
@@ -122,8 +157,6 @@ int main(){
 		FADING_OUT,
 		IDLE
 	} fade = IDLE;
-	
-	vector<Emitter> effects;
 	
     // Start game loop
     while (App.IsOpened())

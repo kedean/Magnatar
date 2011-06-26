@@ -13,6 +13,8 @@
 		0A3268AA13A1B9EE00F2AD4D /* BezierSpline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */; };
 		0A34F9FD139C60D100C76FD9 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */; };
 		0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A34FA20139C624900C76FD9 /* OpenGL.framework */; };
+		0A6B30CD13B68BF4001B1C89 /* libjson_spirit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B30CC13B68BF4001B1C89 /* libjson_spirit.a */; };
+		0A6B311213B68E11001B1C89 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B30C013B68B37001B1C89 /* settings.json */; };
 		0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A829FEF13A6E90D00C38F35 /* Collision.cpp */; };
 		0AB92E3713AE9FDE00B0CDA6 /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */; };
 		0AE6F56B13A7162E00994400 /* ship0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F56513A7162E00994400 /* ship0.png */; };
@@ -58,6 +60,8 @@
 		0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
 		0A34F9FC139C60D100C76FD9 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
 		0A34FA20139C624900C76FD9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0A6B30C013B68B37001B1C89 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = settings.json; sourceTree = "<group>"; };
+		0A6B30CC13B68BF4001B1C89 /* libjson_spirit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson_spirit.a; path = /opt/local/lib/libjson_spirit.a; sourceTree = "<absolute>"; };
 		0A829FEF13A6E90D00C38F35 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
 		0A829FF013A6E90D00C38F35 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		0AB92E3513AE9FDE00B0CDA6 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				A01FB6CF0F07CFF2000AAC7B /* sfml-system.framework in Frameworks */,
 				A01FB6D00F07CFF2000AAC7B /* sfml-window.framework in Frameworks */,
 				0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */,
+				0A6B30CD13B68BF4001B1C89 /* libjson_spirit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +144,7 @@
 		A01FB6B00F07CF75000AAC7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A6B30CC13B68BF4001B1C89 /* libjson_spirit.a */,
 				A01FB6CD0F07CFF2000AAC7B /* SFML.framework */,
 				A01FB6CB0F07CFF2000AAC7B /* sfml-system.framework */,
 				A01FB6CC0F07CFF2000AAC7B /* sfml-window.framework */,
@@ -153,6 +159,7 @@
 			children = (
 				0A7C526C13A70C4100B4BE03 /* Ships */,
 				A01FB6AC0F07CF6E000AAC7B /* Info.plist */,
+				0A6B30C013B68B37001B1C89 /* settings.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6B311213B68E11001B1C89 /* settings.json in Resources */,
 				0AE6F56B13A7162E00994400 /* ship0.png in Resources */,
 				0AE6F56C13A7162E00994400 /* ship1.png in Resources */,
 				0AE6F56D13A7162E00994400 /* ship2.png in Resources */,
@@ -262,8 +270,13 @@
 		A01FB69D0F07CF63000AAC7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				COPY_PHASE_STRIP = NO;
-				HEADER_SEARCH_PATHS = /usr/include;
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/include,
+				);
 			};
 			name = Debug;
 		};
@@ -285,6 +298,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Magnatar;
 			};
@@ -300,6 +317,10 @@
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Magnatar;
 				ZERO_LINK = NO;

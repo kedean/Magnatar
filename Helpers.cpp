@@ -43,6 +43,8 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 	vector<kd::Vector2f> pixels;
 	PointsToPixels(points, pixels, application);
 	
+	kd::Color3f baseColor = curve->GetColor();
+	
 	std::vector<kd::Vector2f>::iterator it;
 	for(it = pixels.begin(); it < pixels.end(); it++){
 		
@@ -54,7 +56,7 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 				t = 0;
 			else if(t > 1)
 				t = 1;
-			sf::Color color = sf::Color((255 * t), (100 * (1 - t)), 0);
+			sf::Color color = sf::Color(baseColor.r*t, baseColor.g*t, baseColor.b*t);
 			
 			if(i > 0 && i < width && n > 0 && n < height)
 				destination->SetPixel(i, n, color);
@@ -66,7 +68,7 @@ void ParseToGradient(int level, kd::BezierCurve* curve, sf::RenderWindow& applic
 				t = 0;
 			else if(t > 1)
 				t = 1;
-			sf::Color color = sf::Color((255 * (1-t)), (100 * t), 0);
+			sf::Color color = sf::Color(baseColor.r * (1-t), baseColor.g * (1-t), baseColor.b * (1-t));
 			if(i > 0 && i < width && n > 0 && n < height)
 				destination->SetPixel(i, n, color);
 		}
@@ -107,11 +109,11 @@ void AIUpdatePlayer(Ship& player, kd::BezierCurve* curve, float elapsed, sf::Ren
 			int xDist = it->x - position.x;
 			if(xDist > 0){
 				player.StopMotion(Ship::West);
-				player.StartMotion(Ship::East, (rand()%25)/10.f * 100);
+				player.StartMotion(Ship::East, (rand()%25)*10);
 			}
 			else{
 				player.StopMotion(Ship::East);
-				player.StartMotion(Ship::West, (rand()%25)/10.f * 100);
+				player.StartMotion(Ship::West, (rand()%25)*10);
 			}
 			return;
 		}
@@ -143,4 +145,13 @@ sf::Unicode::Text IntToRank(int place){
 		}
 	}
 	return sf::Unicode::Text(buff);
+}
+
+void ReadSettings(json_spirit::mObject* dest){
+	ifstream settings("settings.json");
+	if(settings.is_open()){
+		json_spirit::mValue value;
+		json_spirit::read(settings, value);
+		*dest = value.get_obj();
+	}
 }
