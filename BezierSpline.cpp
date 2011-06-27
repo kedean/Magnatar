@@ -43,6 +43,7 @@ Vector2f BezierSpline::RemovePoint(int index){
 }
 
 BezierCurve* BezierSpline::GetCurve(int i){
+	int v = _curves.size();
 	return &(_curves[i]);
 }
 vector<BezierCurve>& BezierSpline::GetCurves(){
