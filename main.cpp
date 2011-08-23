@@ -19,23 +19,25 @@ int main(){
 	
 	sf::View& view = App.GetDefaultView();
 	
-	Game currentGame("Game Loop", App, settings);
+	Scene* currentScene = new Menu("Main Menu", App, settings);
 	
-	Scene* currentScene = &currentGame;
-	
-	//Scene* currentScene = &currentGame;
-	
-    // Start game loop
-    while (App.IsOpened())
+	while (App.IsOpened())
     {
-		// Process events
+		// Events that affect the full application scope
         sf::Event Event;
         while (App.GetEvent(Event))
         {
             if(Event.Type == sf::Event::Closed)
                 App.Close();
 			
-			currentScene->HandleEvent(Event);
+			Scene* newScene = currentScene->HandleEvent(Event);
+			if(newScene != NULL && newScene != currentScene){
+				delete currentScene;
+				currentScene = newScene;
+			}
+			else if(newScene == NULL){
+				App.Close();
+			}
         }
 		
 		App.SetActive();
