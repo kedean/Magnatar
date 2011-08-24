@@ -115,6 +115,31 @@
 			name = "Particle Systems";
 			sourceTree = "<group>";
 		};
+		0A54F8E21404228D0064D216 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A829FEF13A6E90D00C38F35 /* Collision.cpp */,
+				0A829FF013A6E90D00C38F35 /* Collision.h */,
+				0A0ED32413A81B59004AF540 /* Helpers.h */,
+				0A0ED32513A81B59004AF540 /* Helpers.cpp */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0A54F8E3140422B40064D216 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */,
+				0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */,
+				0A34F9FC139C60D100C76FD9 /* Bezier.h */,
+				0AE78F6E13443F640063030D /* Ship.h */,
+				0AE78F6F13443F640063030D /* Ship.cpp */,
+				0AB92E3513AE9FDE00B0CDA6 /* HUD.h */,
+				0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		0A7C526C13A70C4100B4BE03 /* Ships */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,20 +207,11 @@
 		A01FB6B20F07CF80000AAC7B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0A54F8E3140422B40064D216 /* Components */,
+				0A54F8E21404228D0064D216 /* Helpers */,
 				0AAC7F0713B7E76A00721AAE /* Game Loops */,
 				0A0ED4F413A87817004AF540 /* Particle Systems */,
-				0A829FEF13A6E90D00C38F35 /* Collision.cpp */,
-				0A829FF013A6E90D00C38F35 /* Collision.h */,
-				0A34F9FB139C60D100C76FD9 /* BezierCurve.cpp */,
-				0A3268A913A1B9EE00F2AD4D /* BezierSpline.cpp */,
-				0A34F9FC139C60D100C76FD9 /* Bezier.h */,
 				A01FB6C80F07CFCE000AAC7B /* main.cpp */,
-				0AE78F6E13443F640063030D /* Ship.h */,
-				0AE78F6F13443F640063030D /* Ship.cpp */,
-				0A0ED32413A81B59004AF540 /* Helpers.h */,
-				0A0ED32513A81B59004AF540 /* Helpers.cpp */,
-				0AB92E3513AE9FDE00B0CDA6 /* HUD.h */,
-				0AB92E3613AE9FDE00B0CDA6 /* HUD.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";

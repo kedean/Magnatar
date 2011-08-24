@@ -56,7 +56,6 @@ private:
 	
 	//hud variables
 	kd::HeadsUpDisplay _HUD;
-	sf::Shape _powerBorder, _powerBar, _backdrop;
 	float _fadeCountdown;
 	enum FadeState{
 		FADING_IN,

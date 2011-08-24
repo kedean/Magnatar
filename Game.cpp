@@ -119,20 +119,29 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	
 	_HUD.AddWidget("rank", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 20)), sf::Vector2f(width-50, 0));
 	
-	_powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
-	_HUD.AddWidget("powerBorder", (sf::Drawable*) (&_powerBorder), sf::Vector2f(5, 5));
+/*	sf::Shape* raceBar = static_cast<sf::Shape*>(_HUD.AddWidget("raceBar", (sf::Drawable*) (new sf::Shape)));
+	*raceBar = sf::Shape::Rectangle(0, 0, 6, 400, sf::Color(255, 255, 255, 150));
+	raceBar->SetPosition(sf::Vector2f(5, 50));
 	
-	_powerBar.AddPoint(0, 0, sf::Color(255, 255, 0, 200));
-	_powerBar.AddPoint(400, 0, sf::Color(255, 0, 0, 200));
-	_powerBar.AddPoint(400, 18, sf::Color(255, 0, 0, 200));
-	_powerBar.AddPoint(0, 18, sf::Color(255, 255, 0, 200));
-	_HUD.AddWidget("powerBar", (sf::Drawable*) (&_powerBar), sf::Vector2f(6, 6));
+	sf::Shape* raceProgressIndicator = static_cast<sf::Shape*>(_HUD.AddWidget("racePlayer", (sf::Drawable*) (new sf::Shape)));
+	*raceProgressIndicator = sf::Shape::Circle(0, 0, 4, sf::Color(255, 255, 255));
+	raceProgressIndicator->SetPosition(8, 446);
+*/	
+	sf::Shape* powerBorder = static_cast<sf::Shape*>(_HUD.AddWidget("powerBorder", (sf::Drawable*) (new sf::Shape)));
+	*powerBorder = sf::Shape::Rectangle(0, 0, 402, 20, sf::Color(255, 255, 255, 200));
+	powerBorder->SetPosition(5, 5);
 	
+	sf::Shape* powerBar = static_cast<sf::Shape*>(_HUD.AddWidget("powerBar", (sf::Drawable*) (new Shape()), sf::Vector2f(6, 6)));
+	powerBar->AddPoint(0, 0, sf::Color(255, 255, 0, 200));
+	powerBar->AddPoint(400, 0, sf::Color(255, 0, 0, 200));
+	powerBar->AddPoint(400, 18, sf::Color(255, 0, 0, 200));
+	powerBar->AddPoint(0, 18, sf::Color(255, 255, 0, 200));
+
 	//set up pause screen
-	
 	_game->Restart(); //game starts paused with a countdown timer
-	_backdrop = sf::Shape::Rectangle(0, 0, _application.GetWidth(), _application.GetHeight(), sf::Color(0, 0, 0, 100));
-	_HUD.AddWidget("backdrop", (sf::Drawable*) (&_backdrop));
+	sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD.AddWidget("backdrop", (sf::Drawable*) (new Shape)));
+	*backdrop = sf::Shape::Rectangle(0, 0, _application.GetWidth(), _application.GetHeight(), sf::Color(0, 0, 0, 100));
+	
 	_HUD.AddWidget("countdown", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 30)), sf::Vector2f(_application.GetDefaultView().GetCenter() - sf::Vector2f(15, 15)));
 	
 	_fadeCountdown = 0;
@@ -140,7 +149,6 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 }
 
 void Game::Loop(){
-	std::cout << "Foo" << std::endl;
 	float height = _application.GetHeight();
 	float width = _application.GetWidth();
 	sf::View& view = _application.GetDefaultView();
@@ -175,13 +183,13 @@ void Game::Loop(){
 			int forwardVal = DistanceFromCurve(lPixels, playerIt->GetPosition() + sf::Vector2f(15, 15)); //distance between the curve and this player, on their y position. Used to determine speed.
 			if(forwardVal > width) //infinitely far from curve, thats not allowed. No motion in that case.
 				forwardVal = 50;
-				else
-					forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
-					forwardVal = (forwardVal*forwardVal)/1000; //square and scale down
-					
-					int pointOfRef = playerIt->GetPosition().y;
-					int place = 0; //initial place is zero. The iterator will pass over the player as well, so the offset is made there
-					vector<Ship>::iterator placeIt;
+			else
+				forwardVal = width - forwardVal; //invert, further away from the curve should be smaller
+			forwardVal = (forwardVal*forwardVal)/1000; //square and scale down
+			
+			int pointOfRef = playerIt->GetPosition().y;
+			int place = 0; //initial place is zero. The iterator will pass over the player as well, so the offset is made there
+			vector<Ship>::iterator placeIt;
 			for(placeIt = _playerList.begin(); placeIt < _playerList.end(); placeIt++){
 				if(placeIt->GetPosition().y < pointOfRef)
 					place++;
@@ -211,28 +219,30 @@ void Game::Loop(){
 
 	if(playerVal != 1){
 		playerVal *= (400.f/((width*width)/1000));
-		_powerBar.SetPointPosition(0, 0, 0);
-		_powerBar.SetPointPosition(1, playerVal, 0);
-		_powerBar.SetPointPosition(2, playerVal, 18);
-		_powerBar.SetPointPosition(3, 0, 18);
+		sf::Shape* powerBar = static_cast<sf::Shape*>(_HUD["powerBar"]);
+		powerBar->SetPointPosition(0, 0, 0);
+		powerBar->SetPointPosition(1, playerVal, 0);
+		powerBar->SetPointPosition(2, playerVal, 18);
+		powerBar->SetPointPosition(3, 0, 18);
 	}
-
+	
 	static_cast<sf::String*>(_HUD["rank"])->SetText(IntToRank(playerPlace));
 
 	if(_game->IsPaused() || _fade != IDLE){ //fading of pause screen
+		sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD["backdrop"]);
 		if(_fade == FADING_IN){
-			int c = _backdrop.GetColor().a;
-			int alpha = _backdrop.GetColor().a + 150.f * elapsed/_fadeCountdown;
+			int c = backdrop->GetColor().a;
+			int alpha = backdrop->GetColor().a + 150.f * elapsed/_fadeCountdown;
 			
-			_backdrop.SetColor(sf::Color(0, 0, 0, alpha));
+			backdrop->SetColor(sf::Color(0, 0, 0, alpha));
 			if(alpha >= 150){
 				_fadeCountdown = 0;
 				_fade = IDLE;
 			}
 		}
 		else if(_fade == FADING_OUT){
-			float alpha = _backdrop.GetColor().a - 150.f * elapsed/_fadeCountdown;
-			_backdrop.SetColor(sf::Color(0, 0, 0, alpha));
+			float alpha = backdrop->GetColor().a - 150.f * elapsed/_fadeCountdown;
+			backdrop->SetColor(sf::Color(0, 0, 0, alpha));
 			if(alpha <= 10){
 				_fadeCountdown = 0;
 				_fade = IDLE;
@@ -255,11 +265,11 @@ void Game::Loop(){
 		char timerStr[5];
 		if(timer > 0)
 			sprintf(timerStr, "%d", timer);
-			else
-				sprintf(timerStr, "");
-				
-				static_cast<sf::String*>(_HUD["countdown"])->SetText(timerStr);
-				sf::Sleep(1.f);
+		else
+			sprintf(timerStr, "");
+			
+			static_cast<sf::String*>(_HUD["countdown"])->SetText(timerStr);
+			sf::Sleep(1.f);
 		timer--;
 	}
 
@@ -271,7 +281,7 @@ Scene* Game::HandleEvent(sf::Event Event){
 	if(Event.Type == sf::Event::KeyPressed){
 		switch(Event.Key.Code){
 			case 'p':
-				if(_game->IsRunning()){
+				if(_game->IsRunning() && !_game->IsReady()){
 					if(_game->IsPaused()){
 						_fade = FADING_OUT;
 					}

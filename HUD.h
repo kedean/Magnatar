@@ -18,7 +18,8 @@ namespace kd{
 		map<string, sf::Drawable*> _widgets; //map of widgets
 		vector<sf::Drawable*> _widgetsOrdered;
 	public:
-		kd::HUD& AddWidget(string label, sf::Drawable* item, sf::Vector2f position=sf::Vector2f(0,0));
+		~HUD(); //HUD will manage all memory given to it. Do not attempt to delete any objects given via AddWidget.
+		sf::Drawable* AddWidget(string label, sf::Drawable* item, sf::Vector2f position=sf::Vector2f(0,0));
 		kd::HUD& RemoveWidget(string label);
 		
 		sf::Drawable* operator[] (string index){
