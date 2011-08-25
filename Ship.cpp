@@ -170,7 +170,7 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	 */
 	
 	for(vector<Ship>::iterator it=neighbors.begin(); it!=neighbors.end(); ++it){
-		if(this != &(*it) && Collision::CircleTest((Sprite)(*this), (Sprite)(*it)) && Collision::PixelPerfectTest((Sprite)(*this), (Sprite)(*it))){
+		if(this != &(*it) && Collision::CircleTest((Sprite)(*this), (Sprite)(*it))){
 			sf::Vector2f slope = this->GetPosition() - it->GetPosition();
 			slope.x = slope.x * northStep*elapsed/300.f;
 			slope.y = slope.y * northStep*elapsed/300.f;
@@ -180,6 +180,29 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 			this->Move(slope);
 			northStep += value;
 			return slope + sf::Vector2f(0, -1*value*elapsed);
+		 
+			
+			/*
+			sf::Vector2f otherSize = it->GetSize();
+			sf::Vector2f thisSize = this->GetSize();
+			
+			sf::Vector2f otherPos = it->GetPosition();
+			sf::Vector2f thisPos = this->GetPosition();
+			
+			sf::Vector2f shiftEach;
+			
+			if(thisPos.x < otherPos.x && (thisPos.x + thisSize.x) > otherPos.x){ //other object is to the right, push it to the right until it isn't colliding
+				shiftEach.x = ((thisPos.x + thisSize.x) - otherPos.x);
+			}
+			
+			if(thisPos.y < otherPos.y && (thisPos.y + thisSize.y) > otherPos.y){ //other object is lower, push it down until it isn't colliding
+				shiftEach.y = ((thisPos.y + thisSize.y) - otherPos.y);
+			}
+			
+			//grrrrr
+			
+		//	it->Move(shiftEach.x, shiftEach.y);
+			this->Move(-shiftEach.x, -shiftEach.y);*/
 		}
 	}
 	

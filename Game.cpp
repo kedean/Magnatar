@@ -105,30 +105,6 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	else{
 		
 	}
-	/*
-	int nPlayers;
-	json_spirit::mValue num_players = settings["num_players"];
-	if(num_players.type() == json_spirit::int_type)
-		nPlayers = num_players.get_int(); //number of image blocks used to hold the gradient, number of component curves to the spline (one per gradient)
-	else
-		nPlayers = 6;
-	
-	for(int i = 0; i < 6; i++){
-		char filename[100];
-		sprintf(filename, "ship%d.png", i); //first player is always the same sprite, the others rotate among the other 5 sprites
-		_playerImages[i].LoadFromFile(filename);
-	}
-	
-	for(int i = 0; i < nPlayers; i++){
-		
-		int xPos;
-		if(i > nPlayers/2)
-			xPos = -1 *((i - nPlayers/2) * 100) - 50;
-		else
-			xPos = (i * 100) - 50;
-		int n = (i == 0) ? 0 : ((i % 5) + 1);
-		_playerList.push_back(Ship(&(_playerImages[n]), _application.GetDefaultView().GetHalfSize() + sf::Vector2f(xPos, 200), sf::Vector2f(1,1), 180.f));
-	}*/
 	
 	_player = &_playerList[0]; //instance that is being controlled
 	
@@ -154,7 +130,11 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	
 	int width = _application.GetWidth();
 	
-	_HUD.AddWidget("rank", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 20)), sf::Vector2f(width-50, 0));
+	_fonts.push_back(sf::Font());
+	if(!_fonts[0].LoadFromFile("Times New Roman.ttf", 30))
+		_fonts[0] = sf::Font::GetDefaultFont();
+	_HUD.AddWidget("rank", (sf::Drawable*) (new sf::String("", _fonts[0], 30)), sf::Vector2f(width-50, 0));
+	static_cast<sf::String*>(_HUD["rank"])->SetStyle(sf::String::Italic);
 	
 /*	sf::Shape* raceBar = static_cast<sf::Shape*>(_HUD.AddWidget("raceBar", (sf::Drawable*) (new sf::Shape)));
 	*raceBar = sf::Shape::Rectangle(0, 0, 6, 400, sf::Color(255, 255, 255, 150));
@@ -179,7 +159,7 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD.AddWidget("backdrop", (sf::Drawable*) (new Shape)));
 	*backdrop = sf::Shape::Rectangle(0, 0, _application.GetWidth(), _application.GetHeight(), sf::Color(0, 0, 0, 100));
 	
-	_HUD.AddWidget("countdown", (sf::Drawable*) (new sf::String("", sf::Font::GetDefaultFont(), 30)), sf::Vector2f(_application.GetDefaultView().GetCenter() - sf::Vector2f(15, 15)));
+	_HUD.AddWidget("countdown", (sf::Drawable*) (new sf::String("", _fonts[0], 30)), sf::Vector2f(_application.GetDefaultView().GetCenter() - sf::Vector2f(15, 15)));
 	
 	_fadeCountdown = 0;
 	_fade = IDLE;
@@ -242,7 +222,7 @@ void Game::Loop(){
 			if(&(*playerIt) == _player){ //player char. Move the camera and update his vars
 				view.SetCenter(view.GetCenter().x, _player->GetPosition().y - 200);
 				playerVal = forwardVal;
-				playerPlace = place;
+				playerPlace = (place != 0 ? place : 1);
 			}
 			else {
 				AIUpdatePlayer(*playerIt, _spline.GetCurve(cIndex), elapsed, &_application);
@@ -251,7 +231,7 @@ void Game::Loop(){
 			_application.Draw(*playerIt);
 		}
 	}
-	else{ //draw but don't update anything
+	else{ //draw but don't update anything, in other words, paused
 		for(playerIt = _playerList.begin(); playerIt < _playerList.end(); playerIt++){
 			_application.Draw(*playerIt);
 		}

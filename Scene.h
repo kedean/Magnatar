@@ -13,6 +13,8 @@ protected:
 	json_spirit::mObject& _settings;
 	sf::RenderWindow& _application;
 	string _id;
+	
+	vector<sf::Font> _fonts;
 public:
 	Scene(string id, sf::RenderWindow& application, json_spirit::mObject& settings) : _id(id), _settings(settings), _application(application){}
 	virtual ~Scene(){}
@@ -30,9 +32,22 @@ private:
 	int _highlightIndex;
 	float _highlightAlpha;
 	int _highlightDir;
+	sf::Clock _tapTime;
 public:
 	Menu(string id, sf::RenderWindow& application, json_spirit::mObject& settings);
 	~Menu(){
+		
+	}
+	void Loop();
+	Scene* HandleEvent(sf::Event event);
+};
+
+class Settings: public Scene{
+private:
+	sf::Shape _background;
+public:
+	Settings(string id, sf::RenderWindow& application, json_spirit::mObject& settings);
+	~Settings(){
 		
 	}
 	void Loop();
@@ -45,7 +60,6 @@ private:
 	GameState _game;
 	kd::BezierSpline _spline;
 	map<string, sf::Image> _playerImages;
-//	sf::Image _playerImages[6];
 	vector<Ship> _playerList;
 	Ship* _player; //pointer to the player character
 	
