@@ -75,8 +75,7 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	//Load up the players
 	
 	json_spirit::mValue playerList = settings["players"];
-	cout << playerList.type() << endl;
-	if(playerList.type() == json_spirit::array_type){
+	if(playerList.type() == json_spirit::array_type){ //if the list is actually specified in settings
 		vector<json_spirit::mValue> playerShips = playerList.get_array();
 		vector<json_spirit::mValue>::iterator ship;
 		int nPlayers = playerShips.size();
@@ -103,7 +102,7 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 		}
 	}
 	else{
-		
+		//no game to play, I suppose!
 	}
 	
 	_player = &_playerList[0]; //instance that is being controlled
@@ -114,7 +113,6 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	
 	_gradientStorage = new sf::Image[_mFrames];
 	_gradientSprites = new sf::Sprite[_mFrames];
-	
 	_gradientInfo = new ProgressInfo(_mFrames, &_application, _gradientStorage, _gradientSprites, &_spline);
 	
 	ProgressGradients((void*)_gradientInfo); //preload the first few frames to prevent scratch at the start
@@ -176,18 +174,19 @@ void Game::Loop(){
 	sf::View& view = _application.GetDefaultView();
 	sf::Vector2f oldCenter = view.GetCenter();
 
-	int mBound = abs((view.GetCenter().y - height) - height/2) / height;
+	int mBound = abs((view.GetCenter().y - height) - height/2) / height; //the lower bound of frames being displayed, in other words, the index of the portion of the curve that is at the bottom of the screen
 	float elapsed = _application.GetFrameTime();
-
-	_application.Draw(_gradientSprites[mBound - 1]);
+	
+	_application.Draw(_gradientSprites[mBound - 1]); //as a precaution against bad frame drawing, draw the frame just below the screen too
 	_application.Draw(_gradientSprites[mBound]);
 	if(mBound+1 >= _mFrames){
 		_fade = FADING_IN;
 		_fadeCountdown = 2;
 		_game.Pause();
 	}
-	else
-	_application.Draw(_gradientSprites[mBound + 1]);
+	else{
+		_application.Draw(_gradientSprites[mBound + 1]);
+	}
 
 	static int playerVal = 0; //static so they will stay during pause screens (for display)
 	static int playerPlace = 1;

@@ -123,9 +123,9 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	int xStep = (eastStep + westStep);
 	int yStep = (northStep + southStep);
 	
-	if(xStep > 0){
+	if(xStep > 0){ //when there is horizontal motion, the emmitter must be used
 		if(_hEffect.GetPosition().x >= this->GetPosition().x || _hEffect.GetPosition().x == -1){
-			_hEffect = Emitter(true, 120, 240, 25, 1).Begin();
+			_hEffect = Emitter(true, 120, 240, 25, 1).Begin(); //the emmitter is reset whenever we swap directions
 		}
 		_hEffect.SetPosition(this->GetPosition() - sf::Vector2f(this->GetSize().x-1, this->GetSize().y/2));
 		_hEffect.Update(elapsed);
@@ -140,7 +140,12 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 		App.Draw(_hEffect);
 	}
 	else{
-		_hEffect.Reset();
+		_hEffect.Reset(); //any time there isn't horizontal motion, the emmitter should be reset so it does not display
+		/*
+		 
+		 note: alter this so that Reset() does not get called during consecutive frames on static horizontal state
+		 
+		 */
 	}
 	
 	if(xStep == 0 && yStep == 0) //nothing to do, Ship is not in motion
@@ -151,10 +156,10 @@ sf::Vector2f Ship::Update(float value, float elapsed, sf::RenderWindow& App, vec
 	 Actual movement
 	 ========
 	 */
-	if(eastStep != 0 && this->GetPosition().x + 30 >= App.GetDefaultView().GetHalfSize().x*2){
+	if(eastStep != 0 && this->GetPosition().x + 30 >= App.GetDefaultView().GetHalfSize().x*2){ //if the ship is colliding with the eastern side of the screen, stop its motion in that direction
 		eastStep = 0;
 	}
-	if(westStep != 0 && this->GetPosition().x <= 30 + this->GetSize().x){
+	if(westStep != 0 && this->GetPosition().x <= 30 + this->GetSize().x){ //same for west
 		westStep = 0;
 	}
 	
