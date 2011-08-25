@@ -1,5 +1,13 @@
 {
 	"track_length"	:	500,
 	"track_color"	:	[0, 255, 0],
-	"num_players"	:	8
+	"rubber_banding":	3,
+	"players"		:	[
+						"ship0.png",
+						"ship1.png",
+						"ship2.png",
+						"ship3.png",
+						"ship4.png",
+						"ship5.png"
+						]
 }

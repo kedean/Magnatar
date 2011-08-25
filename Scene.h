@@ -41,9 +41,11 @@ public:
 
 class Game : public Scene{
 private:
-	GameState* _game;
+	int _rubber_banding;
+	GameState _game;
 	kd::BezierSpline _spline;
-	sf::Image _playerImages[6];
+	map<string, sf::Image> _playerImages;
+//	sf::Image _playerImages[6];
 	vector<Ship> _playerList;
 	Ship* _player; //pointer to the player character
 	
@@ -67,7 +69,6 @@ public:
 	~Game(){
 		_createGradients->Terminate();
 		
-		delete _game;
 		delete[] _gradientStorage;
 		delete[] _gradientSprites;
 		delete _gradientInfo;

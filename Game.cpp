@@ -3,11 +3,16 @@
 #include "Bezier.h"
 #include "Emitter.h"
 #include "HUD.h"
-#include<iostream>
 
 Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& settings) : Scene(id, application, settings){
 	
-	this->_game = new GameState(&_application);
+	json_spirit::mValue rubber_band_effect = settings["rubber_banding"];
+	if(rubber_band_effect.type() == json_spirit::int_type){
+		_rubber_banding = rubber_band_effect.get_int();
+	}
+	else{
+		_rubber_banding = 1;
+	}
 	
 	srand(time(NULL));
 	
@@ -69,6 +74,38 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	
 	//Load up the players
 	
+	json_spirit::mValue playerList = settings["players"];
+	cout << playerList.type() << endl;
+	if(playerList.type() == json_spirit::array_type){
+		vector<json_spirit::mValue> playerShips = playerList.get_array();
+		vector<json_spirit::mValue>::iterator ship;
+		int nPlayers = playerShips.size();
+		
+		for(int i = 0; i < nPlayers; i++){
+			if(playerShips[i].type() == json_spirit::str_type){
+				string filename = playerShips[i].get_str();
+				map<string, sf::Image>::iterator image = _playerImages.find(filename);
+				
+				if(image == _playerImages.end()){ //image not yet loaded
+					_playerImages[filename] = sf::Image();
+					image = _playerImages.find(filename);
+					image->second.LoadFromFile(filename);
+				}
+				
+				int xPos;
+				if(i > nPlayers/2)
+					xPos = -1 *((i - nPlayers/2) * 100) - 50;
+				else
+					xPos = (i * 100) - 50;
+				
+				_playerList.push_back(Ship(&(image->second), _application.GetDefaultView().GetHalfSize() + sf::Vector2f(xPos, 200), sf::Vector2f(1,1), 180.f));
+			}
+		}
+	}
+	else{
+		
+	}
+	/*
 	int nPlayers;
 	json_spirit::mValue num_players = settings["num_players"];
 	if(num_players.type() == json_spirit::int_type)
@@ -91,7 +128,7 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 			xPos = (i * 100) - 50;
 		int n = (i == 0) ? 0 : ((i % 5) + 1);
 		_playerList.push_back(Ship(&(_playerImages[n]), _application.GetDefaultView().GetHalfSize() + sf::Vector2f(xPos, 200), sf::Vector2f(1,1), 180.f));
-	}
+	}*/
 	
 	_player = &_playerList[0]; //instance that is being controlled
 	
@@ -138,7 +175,7 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	powerBar->AddPoint(0, 18, sf::Color(255, 255, 0, 200));
 
 	//set up pause screen
-	_game->Restart(); //game starts paused with a countdown timer
+	_game.Restart(); //game starts paused with a countdown timer
 	sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD.AddWidget("backdrop", (sf::Drawable*) (new Shape)));
 	*backdrop = sf::Shape::Rectangle(0, 0, _application.GetWidth(), _application.GetHeight(), sf::Color(0, 0, 0, 100));
 	
@@ -146,6 +183,11 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	
 	_fadeCountdown = 0;
 	_fade = IDLE;
+	
+	//set up the text that declare it is a pause screen
+	sf::String* pauseText = static_cast<sf::String*>(_HUD.AddWidget("pauseText", (sf::Drawable*) (new sf::String("Magnet Frozen", sf::Font::GetDefaultFont(), 30))));
+	pauseText->SetPosition((_application.GetWidth() - pauseText->GetCharacterPos(13).x)/2, (_application.GetHeight() - pauseText->GetSize())/2);
+	pauseText->SetColor(sf::Color(0,0,0,0));
 }
 
 void Game::Loop(){
@@ -162,7 +204,7 @@ void Game::Loop(){
 	if(mBound+1 >= _mFrames){
 		_fade = FADING_IN;
 		_fadeCountdown = 2;
-		_game->Pause();
+		_game.Pause();
 	}
 	else
 	_application.Draw(_gradientSprites[mBound + 1]);
@@ -171,7 +213,7 @@ void Game::Loop(){
 	static int playerPlace = 1;
 	vector<Ship>::iterator playerIt;
 
-	if(_game->IsPaused() == false && _fade == IDLE){ //paused games should not update the players
+	if(_game.IsPaused() == false && _fade == IDLE){ //paused games should not update the players
 		
 		//player update loop			
 		for(playerIt = _playerList.begin(); playerIt < _playerList.end(); playerIt++){
@@ -195,7 +237,7 @@ void Game::Loop(){
 					place++;
 			}
 			
-			sf::Vector2f moved = playerIt->Update(forwardVal + 4*place, elapsed, _application, _playerList);
+			sf::Vector2f moved = playerIt->Update(forwardVal + _rubber_banding*place, elapsed, _application, _playerList);
 			
 			if(&(*playerIt) == _player){ //player char. Move the camera and update his vars
 				view.SetCenter(view.GetCenter().x, _player->GetPosition().y - 200);
@@ -228,8 +270,9 @@ void Game::Loop(){
 	
 	static_cast<sf::String*>(_HUD["rank"])->SetText(IntToRank(playerPlace));
 
-	if(_game->IsPaused() || _fade != IDLE){ //fading of pause screen
+	if(_game.IsPaused() || _fade != IDLE){ //fading of pause screen
 		sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD["backdrop"]);
+		
 		if(_fade == FADING_IN){
 			int c = backdrop->GetColor().a;
 			int alpha = backdrop->GetColor().a + 150.f * elapsed/_fadeCountdown;
@@ -250,7 +293,7 @@ void Game::Loop(){
 		}
 	}
 
-	if(_game->IsReady()){ //Countdown screen, only appear at start of game
+	if(_game.IsReady()){ //Countdown screen, only appear at start of game
 		static int timer = -1; //will cause a bug with multiple instances, fix this.
 		if(timer < 0)
 			timer = 3;
@@ -259,7 +302,7 @@ void Game::Loop(){
 				timer = -1;
 				_fadeCountdown = .2f;
 				_fade = FADING_OUT;
-				_game->Start();
+				_game.Start();
 			}
 		
 		char timerStr[5];
@@ -280,16 +323,19 @@ void Game::Loop(){
 Scene* Game::HandleEvent(sf::Event Event){
 	if(Event.Type == sf::Event::KeyPressed){
 		switch(Event.Key.Code){
-			case 'p':
-				if(_game->IsRunning() && !_game->IsReady()){
-					if(_game->IsPaused()){
+			case sf::Key::Return:
+				if(_game.IsRunning() && !_game.IsReady()){
+					sf::String* pauseText = static_cast<sf::String*>(_HUD["pauseText"]);
+					if(_game.IsPaused()){
 						_fade = FADING_OUT;
+						pauseText->SetColor(sf::Color(0,0,0,0));
 					}
 					else{
 						_fade = FADING_IN;
+						pauseText->SetColor(sf::Color(255,255,255,255));
 					}
-					_fadeCountdown = .2;
-					_game->TogglePause();
+					_fadeCountdown = .2f;
+					_game.TogglePause();
 				}
 				break;
 			case 'w':

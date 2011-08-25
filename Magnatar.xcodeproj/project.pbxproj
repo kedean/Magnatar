@@ -15,6 +15,7 @@
 		0A34FA21139C624900C76FD9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A34FA20139C624900C76FD9 /* OpenGL.framework */; };
 		0A6B30CD13B68BF4001B1C89 /* libjson_spirit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6B30CC13B68BF4001B1C89 /* libjson_spirit.a */; };
 		0A6B311213B68E11001B1C89 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B30C013B68B37001B1C89 /* settings.json */; };
+		0A7C3012140490350054142E /* HYDROGEN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C3011140490350054142E /* HYDROGEN.TTF */; };
 		0A829FF113A6E90D00C38F35 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A829FEF13A6E90D00C38F35 /* Collision.cpp */; };
 		0AAC7F0D13B7E79100721AAE /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC7F0C13B7E79100721AAE /* Game.cpp */; };
 		0AAC7F7F13B812F300721AAE /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC7F7E13B812F300721AAE /* Menu.cpp */; };
@@ -64,6 +65,7 @@
 		0A34FA20139C624900C76FD9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		0A6B30C013B68B37001B1C89 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = settings.json; sourceTree = "<group>"; };
 		0A6B30CC13B68BF4001B1C89 /* libjson_spirit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson_spirit.a; path = /opt/local/lib/libjson_spirit.a; sourceTree = "<absolute>"; };
+		0A7C3011140490350054142E /* HYDROGEN.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HYDROGEN.TTF; sourceTree = "<group>"; };
 		0A829FEF13A6E90D00C38F35 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
 		0A829FF013A6E90D00C38F35 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		0AAC7F0C13B7E79100721AAE /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		A01FB6B10F07CF7C000AAC7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A7C3011140490350054142E /* HYDROGEN.TTF */,
 				0A7C526C13A70C4100B4BE03 /* Ships */,
 				A01FB6AC0F07CF6E000AAC7B /* Info.plist */,
 				0A6B30C013B68B37001B1C89 /* settings.json */,
@@ -267,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7C3012140490350054142E /* HYDROGEN.TTF in Resources */,
 				0A6B311213B68E11001B1C89 /* settings.json in Resources */,
 				0AE6F56B13A7162E00994400 /* ship0.png in Resources */,
 				0AE6F56C13A7162E00994400 /* ship1.png in Resources */,

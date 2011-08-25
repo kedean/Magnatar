@@ -10,7 +10,6 @@
 #include "Ship.h"
 using namespace std;
 
-
 inline int NumDigits(int number){
 	if(number < 0)
 		number = 0-number;
@@ -50,9 +49,8 @@ class GameState{ //contains the global state of the game in progress
 private:
 	bool _paused;
 	bool _ready;
-	sf::RenderWindow* _app;
 public:
-	GameState(sf::RenderWindow* App) : _paused(false), _ready(false), _app(App){};
+	GameState() : _paused(false), _ready(false){};
 	
 	GameState& Restart(){
 		_ready = true;

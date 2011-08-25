@@ -3,7 +3,8 @@
 
 Menu::Menu(string id, sf::RenderWindow& application, json_spirit::mObject& settings) : Scene(id, application, settings){
 	_background = sf::Shape::Rectangle(0,0,application.GetWidth(), application.GetHeight(),sf::Color(0, 0, 0));
-	_textToRender.push_back(sf::String("Magnatar", sf::Font::GetDefaultFont(), 30));
+	
+	_textToRender.push_back(sf::String("Magnatar"));
 	_textToRender.back().SetPosition((_application.GetWidth() - _textToRender[0].GetCharacterPos(8).x)/2, 100);
 	
 	_textToRender.push_back(sf::String("New Game", sf::Font::GetDefaultFont(), 20));
@@ -24,7 +25,6 @@ void Menu::Loop(){
 	for(int i = 0; i < _textToRender.size(); i++){
 		if(_highlightIndex == i){ //selected item in the menu
 			_highlightAlpha += _highlightDir;
-			cout << _highlightAlpha << endl;
 			if(_highlightAlpha >= 255.f)
 				_highlightDir = -HIGHLIGHT_SPEED;
 			else if(_highlightAlpha <= 100.f)
@@ -35,7 +35,7 @@ void Menu::Loop(){
 	}
 }
 Scene* Menu::HandleEvent(sf::Event event){
-	if(event.Key.Code == sf::Key::Space){
+	if(event.Key.Code == sf::Key::Space || event.Key.Code == sf::Key::Return){
 		if(_highlightIndex == 1){
 			_application.SetActive();
 			_application.Clear();
