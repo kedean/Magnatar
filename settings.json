@@ -9,5 +9,6 @@
 						"ship3.png",
 						"ship4.png",
 						"ship5.png"
-						]
+						],
+	"fullscreen"	:	false
 }
