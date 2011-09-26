@@ -1,6 +1,6 @@
 {
 	"track_length"	:	500,
-	"track_color"	:	[0, 255, 0],
+	"track_color"	:	[255, 0, 0],
 	"rubber_banding":	3,
 	"players"		:	[
 						"ship0.png",

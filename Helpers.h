@@ -1,10 +1,10 @@
 #pragma once
 
-#include<vector>
 #include<SFML/Graphics.hpp>
 
 #include<json_spirit.h>
 #include<fstream>
+#include<vector>
 
 #include "Bezier.h"
 #include "Ship.h"
@@ -45,7 +45,7 @@ sf::Unicode::Text IntToRank(int place);
 
 void ReadSettings(json_spirit::mObject* dest);
 
-class GameState{ //contains the global state of the game in progress
+class GameState{ //contains the overall state of the game in progress
 private:
 	bool _paused;
 	bool _ready;

@@ -106,6 +106,8 @@ Game::Game(string id, sf::RenderWindow& application, json_spirit::mObject& setti
 	}
 	
 	_player = &_playerList[0]; //instance that is being controlled
+	_playerVal = 0;
+	_playerPlace = 1;
 	
 	//Load up the level
 	
@@ -187,9 +189,7 @@ void Game::Loop(){
 	else{
 		_application.Draw(_gradientSprites[mBound + 1]);
 	}
-
-	static int playerVal = 0; //static so they will stay during pause screens (for display)
-	static int playerPlace = 1;
+	
 	vector<Ship>::iterator playerIt;
 
 	if(_game.IsPaused() == false && _fade == IDLE){ //paused games should not update the players
@@ -220,8 +220,8 @@ void Game::Loop(){
 			
 			if(&(*playerIt) == _player){ //player char. Move the camera and update his vars
 				view.SetCenter(view.GetCenter().x, _player->GetPosition().y - 200);
-				playerVal = forwardVal;
-				playerPlace = (place != 0 ? place : 1);
+				_playerVal = forwardVal;
+				_playerPlace = (place != 0 ? place : 1);
 			}
 			else {
 				AIUpdatePlayer(*playerIt, _spline.GetCurve(cIndex), elapsed, &_application);
@@ -238,16 +238,16 @@ void Game::Loop(){
 
 	/*Display the HUD*/
 
-	if(playerVal != 1){
-		playerVal *= (400.f/((width*width)/1000));
+	if(_playerVal != 1){
+		_playerVal *= (400.f/((width*width)/1000));
 		sf::Shape* powerBar = static_cast<sf::Shape*>(_HUD["powerBar"]);
 		powerBar->SetPointPosition(0, 0, 0);
-		powerBar->SetPointPosition(1, playerVal, 0);
-		powerBar->SetPointPosition(2, playerVal, 18);
+		powerBar->SetPointPosition(1, _playerVal, 0);
+		powerBar->SetPointPosition(2, _playerVal, 18);
 		powerBar->SetPointPosition(3, 0, 18);
 	}
 	
-	static_cast<sf::String*>(_HUD["rank"])->SetText(IntToRank(playerPlace));
+	static_cast<sf::String*>(_HUD["rank"])->SetText(IntToRank(_playerPlace));
 
 	if(_game.IsPaused() || _fade != IDLE){ //fading of pause screen
 		sf::Shape* backdrop = static_cast<sf::Shape*>(_HUD["backdrop"]);
@@ -297,13 +297,14 @@ void Game::Loop(){
 
 	_HUD.SetPosition(view.GetCenter() - view.GetHalfSize());
 	_application.Draw(_HUD);
+	_HUD.CleanWidgets();
 }
 
 Scene* Game::HandleEvent(sf::Event Event){
 	if(Event.Type == sf::Event::KeyPressed){
 		switch(Event.Key.Code){
 			case sf::Key::Return:
-				if(_game.IsRunning() && !_game.IsReady()){
+				if(_game.IsRunning()){
 					sf::String* pauseText = static_cast<sf::String*>(_HUD["pauseText"]);
 					if(_game.IsPaused()){
 						_fade = FADING_OUT;

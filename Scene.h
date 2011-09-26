@@ -33,6 +33,7 @@ private:
 	float _highlightAlpha;
 	int _highlightDir;
 	sf::Clock _tapTime;
+	kd::HeadsUpDisplay _HUD;
 public:
 	Menu(string id, sf::RenderWindow& application, json_spirit::mObject& settings);
 	~Menu(){
@@ -57,6 +58,8 @@ public:
 class Game : public Scene{
 private:
 	int _rubber_banding;
+	int _playerVal;
+	int _playerPlace;
 	GameState _game;
 	kd::BezierSpline _spline;
 	map<string, sf::Image> _playerImages;
@@ -81,7 +84,7 @@ private:
 public:
 	Game(string id, sf::RenderWindow& application, json_spirit::mObject& settings);
 	~Game(){
-		_createGradients->Terminate();
+		_createGradients->Terminate(); //We don't need the gradients anymore, stop generating them if its not done yet
 		
 		delete[] _gradientStorage;
 		delete[] _gradientSprites;

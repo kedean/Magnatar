@@ -327,17 +327,17 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				COPY_PHASE_STRIP = NO;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/include,
-				);
+				HEADER_SEARCH_PATHS = /opt/local/include;
 			};
 			name = Debug;
 		};
 		A01FB69E0F07CF63000AAC7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				COPY_PHASE_STRIP = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include;
 			};
 			name = Release;
 		};
